@@ -1,10 +1,11 @@
 [build]
   publish = "build"
-  command = "npm install -C functions && CI=false npm run build"
+  command = "CI=false npm run build"
 
 [functions]
   directory = "functions"
   node_bundler = "esbuild"
+  external_node_modules = ["@google/generative-ai"]
 
 [functions."*"]
   timeout = 26
