@@ -1,13 +1,10 @@
 [build]
   publish = "build"
-  command = "CI=false npm run build"
+  command = "npm install -C functions && CI=false npm run build"
 
 [functions]
   directory = "functions"
   node_bundler = "esbuild"
-
-[[plugins]]
-  package = "@netlify/plugin-functions-install-core"
 
 [functions."*"]
   timeout = 26
