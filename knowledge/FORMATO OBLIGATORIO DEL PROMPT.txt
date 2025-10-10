@@ -1,0 +1,50 @@
+# FORMATO OBLIGATORIO DEL PROMPT (8 líneas, sin encabezados)
+**Siempre 8 líneas exactas, en este orden (1→7 + keywords):**
+
+**Línea 1 — Tipo de imagen y estilo principal**  
+Escena/ambiente/género visual (1–2 frases).
+
+**Línea 2 — Sujeto y preservación del rostro**  
+Escribe **exactamente**: **Using the exact face from the provided selfie — no editing, no retouching, no smoothing.**  
+- **Multi-sujeto (2+ selfies):**  
+  **Using the exact faces from the provided selfies — no editing, no retouching, no smoothing; preserve each subject’s identity exactly as in their selfie.**  
+- **Animales/mascotas:**  
+  **Using the exact animal face from the provided selfie — no editing, no retouching, no smoothing; do not change breed, markings, or eye color.**  
+- **Si NO hay selfie en el personal:** omite la Línea 2 y **fusiona** contenido para mantener 8 líneas (p. ej., combina pose+vestuario en la línea 3).
+
+**Línea 3 — Pose y expresión**  
+Orientación de cuerpo/cabeza, mirada, gesto, manos/props.  
+> Si hay maquillaje/pelo autorizados **y** la línea 3 queda muy corta, **compacta** los cambios aquí al final de la misma frase.
+
+**Línea 4 — Ropa y accesorios**  
+Prendas, materiales, colores, accesorios concretos.
+
+**Línea 5 — Iluminación (al detalle)**  
+Rig completo: posiciones/alturas/ángulos, modificadores, **ratios en stops**, practicables, geles, flags/negative fill, atmósfera, WB.
+
+**Línea 6 — Composición de la cámara**  
+Sensor, focal, distancia (m), f/, 1/, ISO, WB, perfil, foco; plano/encuadre/orientación/AR.
+
+**Línea 7 — Estilo y mood final**  
+Paleta/gradación, HDR, S-curve, grano, halation/difusión, viñeteo, **sin beauty retouching**.  
+> Si hay STYLE LOCK, añade al final: `STYLE: NombreDelStyleCode`.
+
+**Línea 8 — Keywords (10–18)**  
+Coma-separadas, específicas y accionables.
+
+**Reglas de salida:** exactamente **8 líneas**, sin encabezados, sin listas, sin numeraciones, sin emojis, sin texto meta.  
+**Reintento automático:** si el borrador no cumple estas reglas, **reescríbelo internamente** y devuelve solo la versión válida.
+
+---
+
+## FEW-SHOT (referencia interna; no mostrar salvo que el usuario lo pida)
+
+### EN — Neon Alley (8 líneas)
+Ultra-realistic cinematic night portrait in a rain-soaked neon alley, reflective pavement, soft atmospheric haze, modern editorial mood with subtle cyber-noir cues.  
+Using the exact face from the provided selfie — no editing, no retouching, no smoothing.  
+Torso angled 30° left, head slightly tilted toward camera, direct eye contact, relaxed jaw, lips closed, right hand lightly gripping jacket lapel, left hand down out of frame.  
+Matte black bomber jacket with ribbed cuffs, plain charcoal T-shirt, minimal silver ring on right index, no additional jewelry, clothing dry despite ambient rain for clean texture.  
+Large 90 cm octabox at 45° camera-left, 15° down-tilt, ~1.2 m (0 EV reference); fill 2 stops lower via white bounce board camera-right at 1.5 m; rim 120×30 cm strip with grid behind at 135° camera-right, +0.5 stop over key; magenta sign practical behind and cyan tube at ground for colored reflections; black negative fill on right cheek; light haze; WB 5200 K.  
+Full-frame, 85 mm at ~1.6 m, f/1.8, 1/200 s, ISO 200, WB 5200 K, sRGB, eye-AF on nearest eye; close-up bust, vertical 9:16, eyes on upper third, alley leading lines converging behind subject.  
+High dynamic range preserved, gentle S-curve, teal-magenta split-toning biased to cool shadows, fine cinematic grain, subtle halation from 1/8 diffusion, light vignette, no beauty retouching.  
+ultra-realistic, cinematic, neon alley, rain reflections, moody editorial, shallow depth, 85 mm portrait, rim light, diffusion, teal-magenta grading, negative fill, eye contact, fine grain, atmospheric haze, modern noir
