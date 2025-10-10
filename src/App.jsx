@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Camera, Sparkles, Check, Instagram, Send, Menu, X, ArrowRight, Star, Zap, Download, Copy, Gift, Crown, Lock } from "lucide-react";
+import React, { useState, useMemo } from "react";
+import { Camera, Check, Instagram, Send, Menu, X, ArrowRight, Star, Zap, Download, Copy, Gift, Crown, Lock, Image as ImageIcon } from "lucide-react";
 
 // ===================================================================================
-// TU BASE DE DATOS COMPLETA DE PROMPTS (ARREGLADO CON ENCODEURI)
+// BASE DE DATOS Y CONFIGURACIÓN
 // ===================================================================================
-const ALL_PROMPTS = [
+const RAW_PROMPTS = [
   {
     title: "Retrato de perfil B/N",
     src: "09ij0fdi32j9d8j32g34.jpg",
@@ -395,13 +395,19 @@ const ALL_PROMPTS = [
     prompt: `A studio portrait of a subject dressed as a medieval king before the 15th century, seated with dignity on a plain floor against a seamless dark gray studio backdrop. The subject is wearing a mantle with a white-and-black fur collar, a deep red cape embroidered with metallic gold patterns in ornate medieval style, and a royal crown slightly hooked to one side. Using the exact face from the provided selfie — no editing, no retouching, no smoothing, preserving natural fur texture and expression. The lighting rig: a large softbox key light at 45° camera left, fill light 1.5 stops lower from camera right, and a very subtle rim light behind to create gentle contour, all balanced at 5500K. Camera: full-frame body with 85 mm lens, shot at about 2 meters, f/4, 1/125 s, ISO 200, white balance 5500K, eye-AF on the closest eye. Framing: vertical portrait 9:16, medium shot with centered composition. Post: high-dynamic-range, natural texture, no beauty filters. Ultra-realistic, professional photography, cinematic style`,
     category: "mascotas",
   },
-].map(p => ({ ...p, id: p.src, src: `/${encodeURIComponent(p.src)}`, prompt: (p.prompt || '').replace(/\s+/g, ' ').trim() }));
+]
+const ALL_PROMPTS = RAW_PROMPTS.map(p => ({
+    ...p,
+    id: p.src,
+    src: `/${encodeURIComponent(p.src)}`,
+    prompt: (p.prompt || '').replace(/\s+/g, ' ').trim()
+}));
 
 const CATEGORIES = [
     { id: 'todos', name: 'Todos' }, { id: 'hombre', name: 'Hombre' }, { id: 'mujer', name: 'Mujer' }, { id: 'mascotas', name: 'Mascotas' }, { id: 'halloween', name: 'Halloween' }, { id: 'pareja', name: 'Parejas' }
 ];
 
-const ASPECT_RATIOS = ["1:1", "3:4", "4:5", "9:16", "4:3", "5:4", "16:9"];
+const ASPECT_RATIOS = ["3:4", "1:1", "4:5", "9:16", "4:3", "5:4", "16:9"];
 
 const PRESETS = [
     { id: 1, name: "Cinematográfico Editorial", subtitle: "Low-Key Rembrandt", free: true, promptBlock: "Ultra-realistic editorial portrait, 85mm f/1.4, Rembrandt lighting..." },
@@ -413,13 +419,14 @@ const PRESETS = [
 ];
 
 const CREDIT_PACKS = [
-    { name: "Pack Básico", price: "9.99", credits: "100 créditos", features: ["Ideal para empezar", "Soporte estándar"] },
+    { name: "Pack Básico", price: "9.99", credits: "100 créditos", features: ["Ideal para empezar a generar prompts", "Soporte estándar"] },
     { name: "Pack Pro", price: "24.99", popular: true, credits: "300 créditos", features: ["Mejor relación crédito/precio", "Soporte prioritario"] },
-    { name: "Pack Premium", price: "69.99", credits: "1000 créditos", features: ["Para usuarios intensivos", "Acceso a funciones beta"] }
+    { name: "Pack Premium", price: "69.99", credits: "1000 créditos", features: ["Para usuarios intensivos de prompts", "Acceso a funciones beta"] }
 ];
 
-
-// --- COMPONENTES DE LA UI ---
+// ===================================================================================
+// HOOKS Y COMPONENTES
+// ===================================================================================
 
 const AnimatedSection = ({ children, className }) => <div className={className}>{children}</div>;
 
@@ -434,15 +441,12 @@ const CategoryTabs = ({ selected, onSelect }) => (
     </div>
 );
 
-const PromptModal = ({ item, onClose, onCopy }) => {
-    // ... (El código del PromptModal se mantiene igual)
-};
-
 const GeminiAssistantView = ({ onCopy }) => {
     const [prompt, setPrompt] = useState("");
-    const [aspectRatio, setAspectRatio] = useState("1:1");
+    const [aspectRatio, setAspectRatio] = useState("3:4");
     const [response, setResponse] = useState("Aquí aparecerá el prompt generado...");
     const [isLoading, setIsLoading] = useState(false);
+    const [referenceImage, setReferenceImage] = useState(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -451,8 +455,11 @@ const GeminiAssistantView = ({ onCopy }) => {
         setIsLoading(true);
         setResponse("Generando prompt con IA... por favor, espera.");
 
-        const fullPrompt = `Texto del usuario: "${prompt}". Generar un prompt para una imagen con relación de aspecto: ${aspectRatio}.`;
-        
+        let fullPrompt = `Texto del usuario: "${prompt}". Generar un prompt detallado para una imagen con relación de aspecto: ${aspectRatio}.`;
+        if (referenceImage) {
+            fullPrompt += ` El prompt debe incluir instrucciones para basarse en la imagen de referencia subida.`;
+        }
+
         const functionURL = '/.netlify/functions/gemini-processor';
 
         try {
@@ -477,12 +484,12 @@ const GeminiAssistantView = ({ onCopy }) => {
             <div className="max-w-4xl mx-auto">
                 <AnimatedSection className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">Generador de Prompts <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">PROMPTRAITS</span></h2>
-                    <p className="text-gray-400 text-lg">Describe la imagen que quieres crear, elige la relación de aspecto y deja que la IA genere un prompt profesional para ti.</p>
+                    <p className="text-gray-400 text-lg">Describe la imagen que quieres crear y deja que la IA genere un prompt profesional para ti.</p>
                 </AnimatedSection>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div>
-                            <label htmlFor="inputText" className="block text-sm font-medium text-gray-300 mb-2">Describe tu idea:</label>
+                            <label htmlFor="inputText" className="block text-sm font-medium text-gray-300 mb-2">1. Describe tu idea:</label>
                             <textarea id="inputText" rows="5"
                                 className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-gray-300 focus:ring-2 focus:ring-cyan-500"
                                 placeholder="Ej: un retrato de un astronauta en un campo de flores, estilo cinematográfico..."
@@ -490,12 +497,22 @@ const GeminiAssistantView = ({ onCopy }) => {
                                 onChange={(e) => setPrompt(e.target.value)}
                             ></textarea>
                         </div>
-                        <div>
-                            <label htmlFor="aspectRatio" className="block text-sm font-medium text-gray-300 mb-2">Relación de Aspecto:</label>
-                            <select id="aspectRatio" value={aspectRatio} onChange={(e) => setAspectRatio(e.target.value)}
-                                className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-gray-300 focus:ring-2 focus:ring-cyan-500">
-                                {ASPECT_RATIOS.map(ratio => <option key={ratio} value={ratio}>{ratio}</option>)}
-                            </select>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label htmlFor="aspectRatio" className="block text-sm font-medium text-gray-300 mb-2">2. Elige la Relación de Aspecto:</label>
+                                <select id="aspectRatio" value={aspectRatio} onChange={(e) => setAspectRatio(e.target.value)}
+                                    className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-gray-300 focus:ring-2 focus:ring-cyan-500">
+                                    {ASPECT_RATIOS.map(ratio => <option key={ratio} value={ratio}>{ratio}</option>)}
+                                </select>
+                            </div>
+                             <div>
+                                <label htmlFor="referenceImage" className="block text-sm font-medium text-gray-300 mb-2">3. (Opcional) Imagen de Referencia:</label>
+                                <label htmlFor="referenceImage" className="w-full bg-black/50 border border-white/10 rounded-lg p-3 flex items-center justify-center cursor-pointer hover:bg-black/70">
+                                    <ImageIcon className="w-5 h-5 mr-2 text-gray-400" />
+                                    <span className="text-gray-300">{referenceImage ? referenceImage.name : "Subir archivo"}</span>
+                                </label>
+                                <input id="referenceImage" type="file" className="hidden" onChange={(e) => setReferenceImage(e.target.files[0])} accept="image/*" />
+                            </div>
                         </div>
                         <button type="submit" disabled={isLoading} className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-bold disabled:opacity-50 disabled:cursor-not-allowed">
                             {isLoading ? "Generando..." : "Generar Prompt"}
@@ -507,7 +524,7 @@ const GeminiAssistantView = ({ onCopy }) => {
                             <pre className="text-gray-300 whitespace-pre-wrap font-sans">
                                 {response}
                             </pre>
-                            {response && !isLoading && !response.startsWith("Error") && (
+                            {response && !isLoading && !response.startsWith("Error") && response !== "Aquí aparecerá el prompt generado..." && (
                                 <button onClick={() => onCopy(response)} className="mt-4 w-full flex items-center justify-center space-x-2 bg-white/10 text-white px-4 py-3 rounded-lg font-bold hover:bg-white/20 transition-colors duration-300">
                                     <Copy size={18} />
                                     <span>Copiar Prompt Generado</span>
@@ -521,29 +538,65 @@ const GeminiAssistantView = ({ onCopy }) => {
     );
 };
 
-
 // ===================================================================================
 // APP PRINCIPAL
 // ===================================================================================
 export default function App() {
     const [galleryFilter, setGalleryFilter] = useState('todos');
-    const [selectedPrompt, setSelectedPrompt] = useState(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [toastText, setToastText] = useState("");
+
+    const showToast = (text) => {
+        setToastText(text);
+        setTimeout(() => setToastText(""), 2000);
+    };
 
     const handleCopy = (text) => {
         navigator.clipboard.writeText(text);
-        // Opcional: mostrar un aviso de "copiado"
+        showToast("¡Prompt copiado!");
     };
 
-    const filteredGalleryPrompts = galleryFilter === 'todos'
-        ? ALL_PROMPTS
-        : ALL_PROMPTS.filter(p => p.category === galleryFilter);
+    const filteredGalleryPrompts = useMemo(() =>
+        galleryFilter === 'todos'
+            ? ALL_PROMPTS
+            : ALL_PROMPTS.filter(p => p.category === galleryFilter)
+    , [galleryFilter]);
 
     return (
         <div className="min-h-screen bg-[#0D0D0D] text-gray-200 font-sans">
             {/* NAV */}
             <nav className="fixed top-0 w-full z-50 bg-[#0D0D0D]/80 backdrop-blur-lg border-b border-white/10">
-                {/* ... (Tu Nav, sin cambios) ... */}
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex justify-between items-center h-20">
+                        <a href="/" className="flex items-center space-x-3">
+                            <Camera className="w-8 h-8 text-cyan-400" />
+                            <span className="text-xl font-bold tracking-wider">PROMPTRAITS</span>
+                        </a>
+                        <div className="hidden md:flex items-center space-x-8">
+                            <a href="#full-gallery" className="text-gray-300 hover:text-white transition duration-300">Galería</a>
+                            <a href="#prompt-generator" className="text-gray-300 hover:text-white transition duration-300">Generador</a>
+                            <a href="#presets" className="text-gray-300 hover:text-white transition duration-300">Presets</a>
+                            <a href="#credit-packs" className="text-gray-300 hover:text-white transition duration-300">Créditos</a>
+                        </div>
+                        <div className="hidden md:flex items-center">
+                            <a href="#login" className="bg-white/10 text-white px-6 py-2 rounded-full font-semibold hover:bg-white/20 transition duration-300">Login</a>
+                        </div>
+                        <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                            {mobileMenuOpen ? <X /> : <Menu />}
+                        </button>
+                    </div>
+                </div>
+                {mobileMenuOpen && (
+                    <div className="md:hidden bg-[#111111] border-t border-white/10">
+                        <div className="px-4 py-4 space-y-4">
+                            <a href="#full-gallery" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-white">Galería</a>
+                            <a href="#prompt-generator" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-white">Generador</a>
+                            <a href="#presets" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-white">Presets</a>
+                            <a href="#credit-packs" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-white">Créditos</a>
+                            <a href="#login" className="block text-gray-300 hover:text-white">Login</a>
+                        </div>
+                    </div>
+                )}
             </nav>
 
             <main>
@@ -573,20 +626,18 @@ export default function App() {
                     <div className="max-w-7xl mx-auto">
                         <AnimatedSection className="text-center mb-16">
                             <h2 className="text-4xl md:text-5xl font-bold mb-4">Galería de <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Prompts Públicos</span></h2>
-                            <p className="text-gray-400 text-lg">Navega, inspírate y copia los prompts de nuestra colección completa.</p>
+                            <p className="text-gray-400 text-lg">Navega, inspírate y haz clic en una imagen para copiar el prompt.</p>
                         </AnimatedSection>
                         <CategoryTabs selected={galleryFilter} onSelect={setGalleryFilter} />
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                             {filteredGalleryPrompts.map(item => (
-                                <div key={item.id} onClick={() => setSelectedPrompt(item)} className="cursor-pointer">
-                                    <div className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 transform hover:-translate-y-2 transition-transform duration-300 aspect-[3/4]">
-                                        <img src={item.src} alt={item.title} className="w-full h-full object-cover" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/300x400.png?text=Imagen+no+encontrada"; }} />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end">
-                                            <h3 className="font-bold text-lg p-6 w-full text-white">{item.title}</h3>
-                                        </div>
-                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                                            <span className="text-white font-bold text-lg">Ver Prompt</span>
-                                        </div>
+                                <div key={item.id} onClick={() => handleCopy(item.prompt)} className="cursor-pointer group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 transform hover:-translate-y-2 transition-transform duration-300 aspect-[3/4]">
+                                    <img src={item.src} alt={item.title} loading="lazy" className="w-full h-full object-cover" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/300x400.png?text=Imagen+no+encontrada"; }} />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end">
+                                        <h3 className="font-bold text-lg p-6 w-full text-white">{item.title}</h3>
+                                    </div>
+                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity pointer-events-none">
+                                        <Copy className="w-12 h-12 text-white/80" />
                                     </div>
                                 </div>
                             ))}
@@ -599,7 +650,43 @@ export default function App() {
 
                 {/* 4. PRESETS */}
                 <section id="presets" className="py-24 px-4">
-                    {/* ... (El JSX completo de tu sección de Presets) ... */}
+                    <div className="max-w-7xl mx-auto">
+                         <AnimatedSection className="text-center mb-16">
+                             <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tighter">
+                                 Presets <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Profesionales</span>
+                             </h2>
+                             <p className="text-gray-400 text-lg max-w-2xl mx-auto">Bloques de código listos para copiar y pegar en tus prompts. Resultados garantizados.</p>
+                         </AnimatedSection>
+                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                             {PRESETS.map((preset) => (
+                                 <AnimatedSection key={preset.id} className="relative rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:border-purple-500/50">
+                                     {!preset.free && (
+                                         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center z-10 p-4 text-center">
+                                             <Lock className="w-10 h-10 text-purple-400 mx-auto mb-4" />
+                                             <p className="text-white font-bold text-lg mb-2">Plan PRO Requerido</p>
+                                             <a href="#credit-packs" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                                                 Ver packs de créditos →
+                                             </a>
+                                         </div>
+                                     )}
+                                     <div className="flex items-start justify-between mb-4">
+                                         <div>
+                                             <h3 className="text-xl font-bold mb-1">{preset.name}</h3>
+                                             <p className="text-sm text-gray-400">{preset.subtitle}</p>
+                                         </div>
+                                         {preset.free && <div className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-bold tracking-wider">GRATIS</div>}
+                                     </div>
+                                     <p className="text-sm text-gray-500 mb-4 h-12">
+                                         {preset.promptBlock.substring(0, 80)}...
+                                     </p>
+                                     <button onClick={() => handleCopy(preset.promptBlock)} className="w-full flex items-center justify-center space-x-2 bg-white/10 text-white px-4 py-3 rounded-lg font-bold hover:bg-white/20 transition-colors duration-300">
+                                        <Copy size={18} />
+                                        <span>Copiar Preset</span>
+                                     </button>
+                                 </AnimatedSection>
+                             ))}
+                         </div>
+                     </div>
                 </section>
 
                 {/* 5. PACKS DE CRÉDITOS */}
@@ -632,11 +719,29 @@ export default function App() {
                     </div>
                 </section>
             </main>
-
-            <PromptModal item={selectedPrompt} onClose={() => setSelectedPrompt(null)} onCopy={handleCopy} />
             
+            {/* AVISO DE COPIADO */}
+            {toastText && (
+                <div className="fixed bottom-10 left-1/2 -translate-x-1/2 bg-green-500 text-black px-6 py-3 rounded-full font-bold shadow-lg z-[110]">
+                    {toastText}
+                </div>
+            )}
+
             <footer className="bg-black/20 border-t border-white/10 py-12 px-4 mt-20">
-                 {/* ... (Tu footer se mantiene igual) ... */}
+                 <div className="max-w-7xl mx-auto text-center">
+                    <div className="flex items-center justify-center space-x-3 mb-6">
+                        <Camera className="w-7 h-7 text-cyan-400" />
+                        <span className="text-lg font-bold tracking-wider">PROMPTRAITS</span>
+                    </div>
+                    <p className="text-gray-500 max-w-lg mx-auto mb-6">
+                        Plataforma profesional de prompts y retratos IA. Transforma tu presencia digital y eleva tu marca personal.
+                    </p>
+                    <div className="flex justify-center space-x-6 mb-8">
+                        <a href="https://www.instagram.com/sr_waly/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition"><Instagram /></a>
+                        <a href="https://t.me/+nyMJxze9il4wZGJk" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition"><Send /></a>
+                    </div>
+                     <p className="text-gray-600 text-sm">© {new Date().getFullYear()} Promptraits by Sr. Waly. Todos los derechos reservados.</p>
+                 </div>
             </footer>
         </div>
     );
