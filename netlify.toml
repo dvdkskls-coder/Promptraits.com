@@ -6,8 +6,8 @@
   directory = "functions"
   node_bundler = "esbuild"
 
-[functions."*"]
-  timeout = 26
-
 [[plugins]]
   package = "@netlify/plugin-functions-install-core"
+
+[functions."*"]
+  timeout = 26
