@@ -1,0 +1,9 @@
+# netlify.toml
+
+[build]
+  # Indica a Netlify que los archivos de tu sitio web están en la raíz
+  publish = "." 
+  
+  # Le dice a Netlify que debe buscar las funciones de servidor 
+  # dentro de la carpeta 'functions'
+  functions = "functions"

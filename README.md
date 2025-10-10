@@ -1,1 +1,1 @@
-# Promptraits.com
+# promptraits-web
