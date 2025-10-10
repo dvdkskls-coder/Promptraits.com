@@ -1,158 +1,104 @@
 // functions/gemini-processor.js
-// ESTA VERSIÓN CONTIENE LA LÓGICA MULTIMODAL, LECTURA DE BASE DE DATOS Y EL PROMPT COMPLETO.
+// VERSIÓN MEJORADA CON INSTRUCCIONES DETALLADAS
 
-import { GoogleGenAI } from "@google/genai";
-// Usamos require para asegurar compatibilidad con el entorno Node.js de Netlify Functions
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 const fs = require("fs");
 const path = require("path");
 
-// ---------------------- CONFIGURACIÓN INICIAL ----------------------
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY,
-});
-
-// Rutas a la base de conocimiento
-const KNOWLEDGE_PATH = path.join(__dirname, "..", "knowledge");
+const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // ******************************************************************
-// 🎯 INSTRUCCIONES CLAVE DE TU GEM (Promptraits) - ¡TEXTO COMPLETO!
+// 🎯 INSTRUCCIONES CLAVE DEL GEM (PROMPTRAITS) - VERSIÓN PROFESIONAL
 // ******************************************************************
 const SYSTEM_INSTRUCTION = `
-System prompt para agente generador de retratos ultra realistas
-Eres Promptraits, un agente experto en crear descripciones hiperrealistas (prompts) para modelos de generación de imágenes. Tu función es entrevistar al usuario, comprender qué tipo de retrato desea y sintetizar toda la información en un único prompt extremadamente detallado y técnico. Dicho prompt se utilizará para generar imágenes fotorrealistas de retratos y debe garantizar que se mantiene la identidad facial de la persona retratada.
-Base de conocimiento
-Cuentas con una base de datos interna que incluye manuales de Capture One Pro, guías completas de fotografía profesional (iluminación, composición y emoción) y un manual de filtros fotográficos y cinematográficos. Utiliza estos documentos para:
-•	Comprender y aplicar estilos fotográficos (editorial, cinematográfico, moda, retrato clásico) y técnicas de iluminación, composición y color.
-•	Aplicar ajustes técnicos (exposición, balance de blancos, curvas, capas) y filtros creativos o cinematográficos, sabiendo cuándo es necesario ajustarlos o cuándo mantener la naturalidad de la imagen.
-•	Evitar errores comunes y emplear herramientas como Capture One Pro para modificar fondos, aplicar bokeh, controlar la luz o transferir estilos, preservando siempre la textura y los detalles faciales.
-Principios generales
-1.	Estructura básica del prompt – Un prompt eficaz indica qué se va a mostrar, el estilo/estado de ánimo y los parámetros técnicos.
-2.	Preservación de identidad – Si se proporciona una imagen selfie, la IA debe generar el rostro con el 100% de los rasgos, textura de piel y cabello de la foto original, sin retoques, suavizado o alteración de la edad.
-3.	Adaptación de Referencia – Si se adjunta una imagen de referencia, extrae y aplica su esquema de iluminación, vestuario, pose y composición al rostro del usuario.
-4.	Tono – Mantén un tono profesional, técnico y editorial.
+**ROL Y OBJETIVO:**
+Eres "Promptraits", un agente de IA experto en ingeniería de prompts para modelos de generación de imágenes fotorrealistas. Tu única función es convertir la petición de un usuario en un prompt técnico, detallado y profesional. Tu respuesta final debe ser SIEMPRE y ÚNICAMENTE en INGLÉS.
 
-Protocolos de salida
-•	Tu respuesta debe ser un prompt monolítico, sin separaciones ni enumeraciones, pero claramente dividido por comas y guiones para la legibilidad del modelo de IA.
-•	El prompt debe contener los bloques técnicos (cámara, óptica, iluminación, postprocesado) que el usuario necesita.
-•	Al final del prompt incluye una sección de Keywords.
+**PRINCIPIOS FUNDAMENTALES (NO NEGOCIABLES):**
 
-Reglas de Contenido
-•	Si no hay selfie, genera un sujeto genérico (unisex/neutro) con la descripción, listo para ser sustituido si el usuario envía una más tarde.
-•	Si se proporciona una imagen de referencia sin especificar el estilo, replícalo.
+1.  **PRESERVACIÓN DE IDENTIDAD FACIAL:** Si se proporciona una imagen [SELFIE IMAGE], tu MÁXIMA prioridad es incluir en el prompt una directiva clara e inequívoca para que el modelo de imagen preserve el rostro del selfie con un 100% de fidelidad, sin retoques, sin suavizado, sin rejuvenecimiento y sin alterar ningún rasgo facial. Usa frases como "using the exact face from the provided selfie — no editing, no retouching, no smoothing".
 
-Estructura del Prompt (EN) ten en cuenta el documento de referencia (obligatorio): Antes de redactar cualquier salida, lee y aplica el archivo de conocimiento “FORMATO OBLIGATORIO DEL PROMPT.txt”. Trátalo como fuente de verdad para la estructura y estilo del prompt (8 líneas, sin encabezados). Si el archivo contradice cualquier instrucción, prevalece el archivo. Si el archivo no está disponible/legible, replica fielmente el formato de 8 líneas indicado en este System Prompt y declara internamente que se ha usado el fallback (no lo menciones en la respuesta al usuario).
+2.  **ANÁLISIS DE IMAGEN DE REFERENCIA:** Si se proporciona una imagen [REFERENCE IMAGE], tu tarea principal es actuar como un director de fotografía experto. Debes deconstruir la imagen de referencia y describir en el prompt, de manera técnica y profesional, TODOS los siguientes elementos:
+    * **Entorno y Situación:** Describe la localización, los objetos, el fondo.
+    * **Sujeto(s) y Pose:** Describe la pose, la expresión, la ropa y la actitud del sujeto.
+    * **Estilo Fotográfico:** Define el estilo (ej: editorial, cinematográfico, noir, etc.).
+    * **Iluminación:** Detalla el esquema de luces (ej: luz principal a 45°, luz de relleno, contraluz, tipo de difusor, temperatura de color).
+    * **Parámetros de Cámara:** Especifica la lente (ej: 85mm), la apertura (ej: f/1.8), la velocidad de obturación y el ISO.
+    * **Composición:** Describe el encuadre (ej: plano medio, primer plano), la regla de los tercios, etc.
+    * **Post-procesado:** Menciona el tipo de grano, la curva de contraste, el etalonaje (grading), etc.
 
-// Regla Crucial para la API: Tu respuesta final debe ser solo texto plano o, preferiblemente, un objeto JSON si la aplicación lo necesita para su estructura.
-// Por ejemplo: Tienes prohibido usar cualquier tipo de saludo o despedida.
+3.  **INTERPRETACIÓN DE IDEA EN TEXTO:** Si el usuario solo proporciona una idea en texto, debes enriquecerla aplicando los mismos principios de un fotógrafo profesional. Define un entorno, una iluminación, una composición y todos los detalles técnicos necesarios para convertir una idea simple en un prompt de alta calidad.
+
+**REGLAS DE SALIDA (OBLIGATORIAS):**
+
+1.  **FORMATO OBLIGATORIO:** Tu salida DEBE seguir la estructura definida en el archivo de conocimiento "FORMATO OBLIGATORIO DEL PROMPT.txt". Este archivo es tu única fuente de verdad para la estructura del prompt. Si contradice cualquier otra instrucción, el archivo prevalece.
+2.  **IDIOMA DE SALIDA:** Tu respuesta final (el prompt generado) debe ser exclusivamente en INGLÉS.
+3.  **SIN TEXTO ADICIONAL:** No incluyas saludos, explicaciones, ni ningún texto antes o después del prompt. Tu única salida es el prompt en sí.
 `;
 // ******************************************************************
 
-// ---------------------- LÓGICA DE LECTURA DE ARCHIVOS ----------------------
 function loadKnowledgeBase() {
-  let knowledgeContent = "\n## KNOWLEDGE BASE START\n\n";
-
-  try {
-    const files = fs.readdirSync(KNOWLEDGE_PATH);
-
-    files.forEach((file) => {
-      const filePath = path.join(KNOWLEDGE_PATH, file);
-      // Solo procesa archivos de texto (txt o md) y evita directorios
-      if (
-        fs.lstatSync(filePath).isFile() &&
-        (file.endsWith(".txt") || file.endsWith(".md"))
-      ) {
-        const fileContent = fs.readFileSync(filePath, "utf8");
-
-        // Agrega el contenido, identificando qué archivo es
-        knowledgeContent += `--- Contenido de: ${file} ---\n${fileContent}\n\n`;
-      }
-    });
-
-    knowledgeContent += "## KNOWLEDGE BASE END\n";
-    return knowledgeContent;
-  } catch (e) {
-    console.error(
-      "Error al cargar la base de conocimiento (Server Side):",
-      e.message
-    );
-    return `\n## KNOWLEDGE BASE START - ERROR\n\nNo se pudo cargar la base de conocimiento: ${e.message}\n\n## KNOWLEDGE BASE END\n`;
-  }
+    const KNOWLEDGE_PATH = path.resolve(process.cwd(), 'knowledge');
+    let knowledgeContent = "\n## KNOWLEDGE BASE START\n\n";
+    try {
+        const files = fs.readdirSync(KNOWLEDGE_PATH);
+        files.forEach(file => {
+            const filePath = path.join(KNOWLEDGE_PATH, file);
+            if (fs.lstatSync(filePath).isFile()) {
+                const fileContent = fs.readFileSync(filePath, 'utf8');
+                knowledgeContent += `--- Contenido de: ${file} ---\n${fileContent}\n\n`;
+            }
+        });
+        knowledgeContent += "## KNOWLEDGE BASE END\n";
+        return knowledgeContent;
+    } catch (e) {
+        console.error("Error al cargar la base de conocimiento:", e.message);
+        return `\n## KNOWLEDGE BASE START - ERROR\n\nNo se pudo cargar la base de conocimiento: ${e.message}\n\n## KNOWLEDGE BASE END\n`;
+    }
 }
 
 const KNOWLEDGE_BASE_TEXT = loadKnowledgeBase();
 
-// ---------------------- HANDLER DE NETLIFY FUNCTION ----------------------
-
 exports.handler = async (event) => {
-  // 1. Manejo del Payload Multimodal (Texto y Base64 de las imágenes)
-  if (event.httpMethod !== "POST") {
-    return { statusCode: 405, body: "Método no permitido" };
-  }
-
-  try {
-    // Obtenemos los datos del frontend (texto y bases de imágenes)
-    const { prompt, selfieImage, referenceImage } = JSON.parse(event.body);
-
-    // 2. Construcción del Prompt Multimodal para la API
-    let contents = [];
-
-    // El cuerpo del prompt (reglas y conocimiento)
-    let textPrompt =
-      KNOWLEDGE_BASE_TEXT + "\n\nPetición del usuario: " + prompt;
-
-    // Añadir imagen Selfie (para el rostro)
-    if (selfieImage) {
-      // Empuja la imagen como objeto de datos en línea
-      contents.push({
-        inlineData: {
-          mimeType: "image/jpeg", // Asumimos JPEG
-          data: selfieImage,
-        },
-      });
-      textPrompt +=
-        "\n\n[IMAGEN DE SELFIE ADJUNTADA. UTILIZA ESTE ROSTRO EXACTO.]";
+    if (event.httpMethod !== 'POST') {
+        return { statusCode: 405, body: 'Method Not Allowed' };
     }
 
-    // Añadir imagen de Referencia (para estilo)
-    if (referenceImage) {
-      // Empuja la imagen de referencia como objeto de datos en línea
-      contents.push({
-        inlineData: {
-          mimeType: "image/jpeg",
-          data: referenceImage,
-        },
-      });
-      textPrompt +=
-        "\n\n[IMAGEN DE REFERENCIA ADJUNTADA. UTILIZA ESTE ESTILO, ATMÓSFERA Y ENTORNO.]";
+    try {
+        const { prompt, selfieImage, referenceImage } = JSON.parse(event.body);
+
+        const model = ai.getGenerativeModel({ model: "gemini-1.5-flash-latest", systemInstruction: SYSTEM_INSTRUCTION });
+
+        const promptParts = [KNOWLEDGE_BASE_TEXT];
+        
+        if (prompt) {
+            promptParts.push(`\n\nPetición del usuario: "${prompt}"`);
+        }
+        
+        if (selfieImage) {
+            promptParts.push({ inlineData: { mimeType: "image/jpeg", data: selfieImage } });
+            promptParts.push({ text: "\n[SELFIE IMAGE ATTACHED]" });
+        }
+
+        if (referenceImage) {
+            promptParts.push({ inlineData: { mimeType: "image/jpeg", data: referenceImage } });
+            promptParts.push({ text: "\n[REFERENCE IMAGE ATTACHED]" });
+        }
+
+        const result = await model.generateContent({ contents: [{ role: "user", parts: promptParts }] });
+        const response = await result.response;
+        const text = response.text();
+
+        return {
+            statusCode: 200,
+            headers: { "Content-Type": "text/plain; charset=utf-8" },
+            body: text,
+        };
+    } catch (error) {
+        console.error("Error en la función de Gemini:", error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Fallo interno del servidor al procesar la IA. Detalle: ' + error.message }),
+        };
     }
-
-    // El texto (incluyendo el conocimiento) va al final del array de 'contents'
-    contents.push({ text: textPrompt });
-
-    // 3. Llamada a Gemini
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash", // Modelo multimodal
-      contents: contents,
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-      },
-    });
-
-    // 4. Devuelve el texto generado por Gemini
-    return {
-      statusCode: 200,
-      headers: { "Content-Type": "text/plain" },
-      body: response.text,
-    };
-  } catch (error) {
-    console.error("Error grave en la función de servidor:", error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error:
-          "Fallo interno del servidor al procesar la IA. Detalle: " +
-          error.message,
-      }),
-    };
-  }
 };
