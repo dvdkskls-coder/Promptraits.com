@@ -1,0 +1,571 @@
+Manual y Guía de Usuario: Filtros Fotográficos y
+Cinematográficos
+Introducción a los filtros fotográficos y de cine
+Un filtro fotográfico  es un accesorio que se coloca delante del objetivo de la cámara para modificar la
+luz que ingresa al sistema y lograr efectos que de otra forma serían difíciles o imposibles de obtener
+. En otras palabras, el filtro altera la calidad, cantidad o color de la luz antes de que alcance el sensor
+o película, ayudando tanto a corregir problemas de iluminación  como a añadir efectos creativos . Los filtros
+son utilizados en fotografía y cinematografía (cine) para conseguir imágenes con cierta estética o para
+controlar la exposición de manera profesional.
+En la era digital muchos efectos pueden emularse en postproducción, pero los filtros físicos siguen
+siendo  muy  valorados.  Usándolos  en  cámara  se  pueden  obtener  resultados  más  naturales  (por
+ejemplo, destellos, difusiones o tonos específicos) y ahorrar tiempo de edición . A continuación, se
+presentan todos los tipos principales de filtros  aplicados en fotografía (incluyendo fotografía de estilo
+cinematográfico y retrato de estudio) y en cinematografía, con sus usos y efectos más importantes.
+Tipos de filtros fotográficos (y sus usos principales)
+A  grandes  rasgos,  los  filtros  se  dividen  por  su  función  en  varias  categorías:  protección/UV,
+polarizadores, densidad neutra (ND), densidad neutra graduada (GND), filtros de color y una variedad
+de filtros de efectos especiales . En las siguientes secciones describimos cada tipo, con ejemplos de
+cuándo se usan en fotografía y en cine, y cómo contribuyen a lograr imágenes de aspecto realista y
+profesional .
+Filtros UV y de protección
+Los filtros ultravioleta (UV)  se utilizan principalmente para proteger  la lente de la cámara del polvo, la
+humedad y los arañazos . Antiguamente se empleaban para bloquear la luz UV que podía provocar
+una dominante azul o neblina en película fotoquímica; hoy en día los sensores digitales no son muy
+sensibles a UV, así que su función es casi exclusivamente protectora . Un filtro UV transparente de
+buena calidad no altera la imagen de forma visible , por lo que muchos fotógrafos lo dejan puesto
+permanentemente  para  resguardar  el  frontal  del  objetivo.  Es  importante  usar  filtros  UV  de  vidrio
+óptico  de alta calidad, ya que uno barato puede degradar la nitidez o el contraste de la foto . En
+cámaras de cine digital, a menudo se prescinde del UV si se usa  matte box  (parasoles profesionales),
+pero en rodajes al aire libre algunos directores de fotografía aún colocan un filtro claro o UV como capa
+protectora del caro lente de cine . 
+¿Cuándo utilizarlo?  En cualquier situación donde quieras proteger la lente sin afectar la imagen, por
+ejemplo, fotografía de naturaleza, deportes o entornos con polvo o salpicaduras. Si no vas a usar otro
+filtro, un UV de calidad actúa como un “cristal protector” permanente.  Consejo:  quítalo cuando uses
+múltiples filtros o en tomas nocturnas si notas destellos; de lo contrario, su presencia es inocua y te
+puede ahorrar un disgusto (es preferible rayar el filtro que el elemento frontal del objetivo) .1
+2
+3
+3
+45
+67
+4
+1
+Filtros polarizadores (CPL)
+Los filtros polarizadores  son herramientas fundamentales para controlar reflejos y realzar colores en
+nuestras imágenes. Un polarizador filtra la luz polarizada producida por reflejos en superficies no
+metálicas (agua, vidrio, hojas, asfalto, etc.), reduciendo esos reflejos y el deslumbramiento . Al girar
+el filtro (son filtros circulares giratorios), se puede ajustar el grado de polarización para lograr el efecto
+deseado. Sus principales efectos son:
+Eliminar reflejos indeseados:  por ejemplo, quitar brillos del agua o escaparates, permitiendo
+ver a través de la superficie . En retratos al aire libre, también ayuda a reducir el brillo
+excesivo en la piel.
+Oscurecer cielos y aumentar saturación:  al bloquear cierta luz del cielo (especialmente con el
+sol de lado a 90°), el cielo azul aparece más intenso y contrastado con las nubes . También los
+colores verdes (vegetación) se ven más saturados.
+Mejorar el contraste general:  al eliminar luz parásita de reflejos, la escena gana riqueza de
+color y contraste .
+Un  polarizador  circular  (CPL)  es  preferible  en  cámaras  digitales  (frente  a  uno  lineal)  ya  que  evita
+problemas  con  el  enfoque  automático  y  fotometría .  Nota:  Al  igual  que  unas  gafas  de  sol
+polarizadas, estos filtros reducen la luz que entra – típicamente restan ~2-3 pasos de luz  (stops) –,
+así que hay que compensar con una apertura más grande, un ISO mayor o una velocidad más lenta
+según convenga. Por esta razón, se usan con más frecuencia en exteriores y se evitan en interiores con
+poca luz .
+¿Cuándo utilizarlo?  Siempre que necesites controlar reflejos o mejorar los colores de la escena. En
+fotografía de paisajes  es casi imprescindible para cielos dramáticos y agua transparente (por ejemplo,
+quitar reflejos en un lago) . En fotografía urbana o arquitectónica , elimina brillos de ventanas o
+superficies mojadas. En retrato al aire libre , un polarizador puede reducir brillos en la piel y suavizar
+imperfecciones  (al  minimizar  reflejos  en  poros),  además  de  intensificar  el  fondo  si  es  de  cielo  o
+vegetación .  Muchos  fotógrafos  de  estudio  no  lo  usan  porque  allí  controlan  los  reflejos  con  la
+iluminación, pero en exteriores soleados puede marcar la diferencia incluso para personas (tonos de
+piel más uniformes y menos brillos). En rodajes de cine , los polarizadores se utilizan de forma similar –
+por ejemplo, para evitar reflejos de cámaras en cristales o para poder filmar a través del agua –
+teniendo en cuenta la pérdida de luz. 
+Filtros de densidad neutra (ND)
+Los filtros de densidad neutra , conocidos como ND ( Neutral Density ), son filtros grises uniformes que
+reducen la cantidad de luz que entra a la cámara de forma pareja en todo el cuadro (sin alterar los
+colores) . Básicamente actúan como gafas de sol para la cámara . Son  imprescindibles para
+controlar la exposición en condiciones de mucha luminosidad , permitiendo usar configuraciones
+que de otro modo sobreexponerían la foto . Al oscurecer la escena, los ND permiten por ejemplo:
+Largas exposiciones en pleno día:  lograr tiempos de obturación más largos para difuminar
+movimiento aunque haya mucha luz. Esto es útil para efectos creativos como efecto seda  en agua
+corriente, ríos o cascadas, nubes borrosas en el cielo, o borrar transeúntes en una ciudad
+mediante larga exposición .
+Aperturas amplias bajo sol fuerte:  en retratos al aire libre a mediodía, un ND te deja disparar
+con f/1.4 o f/2 para obtener fondo desenfocado ( bokeh ) sin quemar la imagen . Es decir ,
+posibilitan poca profundidad de campo en exteriores brillantes.8
+• 
+8
+• 
+9
+• 
+9
+1011
+12
+13
+8
+14
+15 16
+15
+• 
+17
+• 
+1819
+2
+Video cinematográfico:  en cine digital, donde se busca mantener un obturador de 1/48s (regla
+180°) para un movimiento natural, los ND son obligatorios en exterior . Sin ND, una cámara de
+video tendría que cerrar mucho el diafragma o usar obturadores muy rápidos dando imagen
+poco cinematográfica. Por eso, las cámaras de cine suelen incorporar ND internos o se usa un
+set de filtros ND en el matte box  constantemente.
+Equilibrar exposición en situaciones de alto rango dinámico:  por ejemplo, si quieres que
+tanto el cielo como el suelo salgan bien expuestos, podrías usar un ND degradado (ver siguiente
+sección) para el cielo, o un ND estándar combinado con iluminación de relleno. En amaneceres/
+atardeceres muy luminosos, un ND puede ayudar a evitar sobreexponer el cielo manteniendo
+una velocidad baja para dar cierta intención de movimiento en nubes .
+Los filtros ND vienen en distintas intensidades (ND2, ND4, ND8… o en pasos de densidad como 0.3, 0.6,
+0.9 ND que corresponden a 1, 2, 3 stops, etc.). También existen ND variables , que son filtros ajustables
+(dos polarizadores giratorios) con los que se puede cambiar la densidad girando el filtro. Estos aportan
+flexibilidad, aunque a altas densidades pueden introducir dominantes de color o patrones extraños, por
+lo que los ND fijos suelen ser preferibles en trabajo crítico.
+¿Cuándo utilizarlo?  En  condiciones de mucha luz  (sol directo, desiertos, nieve) cuando necesitas
+controlar la exposición creativamente . Ejemplos: fotografía de paisaje de larga exposición (usando
+ND  de  6,  10  o  más  pasos  para  exposiciones  de  varios  segundos  incluso  de  día),  fotografía  de
+arquitectura con nubes movidas, cascadas con agua sedosa al mediodía, o  retratos con flash de
+sincronización de alta velocidad  (HSS) donde el ND te ayuda a no exceder la velocidad máxima de
+sincronización. En retrato de estudio al aire libre , como se mencionó, pequeños ND (ND2, ND4, ND8)
+evitan sobreexponer y te dejan usar aperturas amplias para desenfoque incluso bajo sol intenso
+.  En  cine/vídeo ,  prácticamente  siempre  que  filmes  en  exterior  usarás  ND  para  mantener  la
+velocidad de obturación cinematográfica; en cámaras de cine digital a menudo se emplean ND con
+recubrimiento infrarrojo ( IRND ) para evitar dominantes rojizas que aparecen con NDs fuertes
+(esto es un detalle técnico: al bloquear mucha luz visible, el sensor puede captar más infrarrojo, dando
+un tinte marrón; los filtros IRND bloquean también IR ). En interiores, un ND no tiene mucho sentido
+salvo propósitos muy específicos (p.ej., simular oscuridad de noche con aperturas abiertas). 
+Filtros de densidad neutra graduados (GND o degradados)
+Los filtros degradados de densidad neutra (GND)  tienen una parte oscura y otra transparente, con
+una transición gradual entre ambas . Su propósito es equilibrar escenas con diferencias de luminosidad
+muy grandes , típicamente oscureciendo solo la zona más clara del encuadre (como el cielo) mientras la
+parte transparente no oscurece el resto. Son muy usados en  fotografía de paisajes  para exponer
+correctamente un cielo brillante sin subexponer el terreno u horizonte . Por ejemplo, al amanecer o
+atardecer el cielo puede estar varios pasos por encima del primer plano; colocando un GND se “baja” la
+luz del cielo y la cámara puede captar detalles en cielo y tierra a la vez .
+Hay diversos tipos de GND según la transición  de la zona oscura a la clara :
+GND de transición suave (Soft):  el oscurecimiento se desvanece gradualmente. Ideales cuando
+el horizonte no es una línea definida, p. ej. paisajes con montañas o árboles sobresalientes .
+La transición suave evita una línea visible de separación de luminosidad.
+GND de transición media:  un gradiente intermedio. Útiles para escenas con un horizonte algo
+definido pero con elementos verticales (p.ej. edificios contra el cielo) .
+GND de transición dura (Hard):  el cambio de claro a oscuro es abrupto. Se usan con horizontes
+rectos y bien definidos, como el mar contra el cielo . Al alinearlo con el horizonte, oscurece
+mucho el cielo sin afectar el mar/tierra.• 
+• 
+17
+20
+21
+19
+2223
+23
+24
+24
+24
+25
+• 
+25
+• 
+26
+• 
+27
+3
+GND inverso:  tienen la zona más oscura cerca del centro del filtro (no en el borde superior).
+Están diseñados para amaneceres/atardeceres donde el horizonte mismo es la parte más
+luminosa (sol saliendo), así atenúan más cerca del horizonte y menos en la parte alta del cielo
+.
+Estos filtros suelen ser rectangulares y se colocan en un portafiltros, de modo que puedes deslizar la
+posición vertical para que la transición caiga justo donde lo necesitas en la composición.  ¿Cuándo
+utilizarlos?  Principalmente en  fotografía de paisaje  con cielos muy luminosos y suelos oscuros – te
+permiten “comprimir” el rango dinámico de la escena para que el sensor lo capture todo sin quemar ni
+empastar sombras . Algunos cineastas también los emplean en tomas de cielo y tierra, aunque en
+cine digital es común equilibrar luego con gradación de color; sin embargo, directores de fotografía
+puristas aún usan GND físicos para lograr cierto look en cámara. 
+Filtros de color
+Los  filtros de color  alteran el balance de color de la imagen, ya sea para  corregir dominantes  o para
+añadir efectos creativos . En la era digital, muchas de estas correcciones se logran ajustando el
+balance de blancos o con postprocesado, pero los filtros físicos de color aún se usan en ciertos ámbitos
+(por ejemplo, en  fotografía en blanco y negro analógica , en  fotografía submarina  o para lograr
+estéticas de color específicas directamente en cámara). Algunos usos y tipos importantes:
+Corrección de temperatura de color:  filtros cálidos o fríos que ajustan la tonalidad general. Por
+ejemplo, los clásicos filtros de conversión para película: un filtro 85B (naranja) convierte luz de
+día en luz de tono tungsteno para película equilibrada para tungsteno, o un 80A (azul) hace lo
+contrario (convierte luz tungsteno a tonalidad día para película de día). En digital no es necesario
+gracias al balance de blancos, pero en cine analógico eran esenciales. Aún así, un fotógrafo
+podría usar un filtro cálido (como un filtro de Calentamiento 81A ) para dar un tono más cálido
+a un retrato al atardecer , o un filtro frío 82A para enfriar una escena, si desea obtener el look en
+la toma.
+Filtros de color para blanco y negro:  En fotografía monocromática , los filtros de color afectan la
+conversión a grises, aumentando el contraste entre ciertos tonos. Ejemplos clásicos: amarillo  y 
+naranja  – muy usados en retratos en B&N porque aclaran ligeramente la piel caucásica y
+oscurecen el cielo azul, dando un contraste agradable sin exagerar; también reducen la
+apariencia de pecas o imperfecciones al aclarar los tonos rojos de la piel . Un filtro rojo  en
+B&N oscurece dramáticamente el cielo (casi negro con nubes blancas) y hace que la piel muy
+clara salga muy blanca – se usa para efectos dramáticos o artísticos, aunque puede ser poco
+favorecedor si no se busca ese efecto fuerte . Verde  o azul  en B&N no suelen emplearse en
+retratos porque tienden a oscurecer la piel (que tiene componentes rojos) resaltando venas o
+imperfecciones, por lo que dan un aspecto poco favorecedor ; en cambio, tienen aplicaciones
+en fotografía de paisaje (un filtro verde aclara la vegetación en B&N, por ejemplo).
+Filtros de color creativos:  aquí entran filtros de colores diversos para tintar la imagen con
+intenciones artísticas. Por ejemplo, un filtro tabaco o sepia  que agrega un tono cálido marrón
+al cielo para simular atardeceres dramáticos, o filtros degradados de color (mitad de un color ,
+mitad transparente) para dar , digamos, un tono púrpura al cielo sin afectar el suelo. También
+existen polarizadores especiales como el polarizador Gold-N-Blue  que colorea selectivamente
+los reflejos en tonos azules o dorados según cómo se gire , creando efectos de atardecer muy
+saturados en espejos de agua, etc.
+Filtros para fotografía submarina:  bajo el agua, la luz adquiere un tinte azul verdoso conforme
+aumenta la profundidad, ya que el agua filtra los rojos. Por eso, buceando se emplean filtros de
+color rojo o magenta para restaurar el equilibrio de color natural  en fotos o video subacuático
+. Un filtro rojo de buceo  añadirá de vuelta esos rojos perdidos, logrando colores más vibrantes• 
+28
+24
+29
+• 
+• 
+30
+31
+32
+• 
+33
+• 
+34
+4
+de corales y peces a cierta profundidad  (por encima de ~5 metros no hace falta; a mayor
+profundidad es muy útil). En aguas verdes (dulce) a veces se usan filtros magenta.
+Filtros intensificadores de color:  hay filtros llamados Enhancers  (como los de didimio) que
+realzan ciertos tonos específicos, típicamente el rojo y anaranjado. Se usan en otoño para
+intensificar hojas otoñales, o en fotografía de alimentos para colores más “ricos”. No son tan
+comunes pero son parte del arsenal de filtros de color .
+¿Cuándo utilizarlos?  En fotografía digital en color , los filtros de color se usan menos para corrección
+(se prefiere hacerlo luego), pero sí para efectos creativos en cámara – por ejemplo, usar un filtro azul
+suave para un look frío melancólico ya desde la toma. En fotografía con película  son más comunes, ya
+que ajustan la escena para el tipo de film utilizado. En cine  actual (digital) es poco frecuente colocar
+filtros de color delante del lente para toda la escena (ya que la gradación en post es muy poderosa),
+pero algunos directores lo hacen por estética: por ejemplo, filtros  Coral  o  Chocolate  para calentar
+tonalidades de piel en cámara, o un filtro Tabaco degradado  para realzar la atmósfera de un atardecer .
+También existen filtros de día por noche  (day-for-night) que son de un azul intenso y reducen la luz,
+usados antiguamente para simular noche en tomas diurnas. En general, su uso hoy es más artístico que
+técnico.
+Filtros de efectos especiales y creativos
+En esta categoría entran todos aquellos filtros diseñados no para correcciones básicas, sino para lograr
+efectos visuales particulares . Muchos de ellos son usados tanto por fotógrafos como por cineastas
+para darle un “toque” único a la imagen. A continuación, describimos los más comunes:
+Filtro de infrarrojos (IR):  Es un filtro opaco al ojo humano (suele ser casi negro o rojo oscuro)
+que bloquea la luz visible y solo deja pasar la luz infrarroja  hacia el sensor . El resultado,
+con una cámara capaz de captarlo (modificada o película IR, o a veces usando exposiciones
+largas), son imágenes de apariencia  surreal  y etérea: por ejemplo, el follaje vegetal aparece
+blanco nevado, los cielos muy oscuros y un aspecto onírico en blanco y negro o falsos colores
+. La fotografía infrarroja con filtro produce efectos muy creativos directamente en cámara.
+Nota:  Muchas cámaras digitales tienen filtro de corte IR interno, por lo que para usar un filtro IR
+externo suele requerirse quitar o modificar ese filtro interno (o usar cámaras especialmente
+convertidas). Este tipo de filtro no se usa en cine comercial convencional, pero sí en proyectos
+artísticos o científicos. 
+Filtros de difusión (Mist, Pro-Mist, etc.):  Los filtros de difusión sirven para suavizar la imagen  de
+forma controlada, reduciendo la nitidez aparente y el contraste, especialmente en las altas luces,
+generando un halo o resplandor suave en las luces  muy característico . Son muy populares
+en cinematografía para lograr un look cinematográfico “de película” : emulan cómo las lentes
+antiguas  o  el  celuloide  dispersan  la  luz  (halation),  dando  a  las  escenas  un  acabado  menos
+“digital” y más orgánico. Ejemplos famosos son los  Tiffen Black Pro-Mist ,  Hollywood Black
+Magic ,  Glimmerglass ,  Schneider Hollywood Mist ,  Black Satin , etc. Suelen venir en distintas
+intensidades (1/8, 1/4, 1/2, 1, 2…; cuanto mayor el número, más difuminado). Un filtro  Mist
+típicamente suaviza los detalles y reduce los contrastes fuertes , envolviendo las luces brillantes en
+un ligero brillo difuso . En retratos, esto es ideal para lograr un aspecto más  agradable y
+etéreo : las arrugas e imperfecciones de la piel se atenúan bajo la suavidad del filtro (reduciendo
+la necesidad de retoque) . De hecho, en fotografía de retrato de estudio  a veces se usaban
+filtros de difusión o  soft focus  para un efecto “glamour” (ej: el clásico filtro Softar de Zeiss o
+incluso vaselina en un UV). En cine , casi todas las producciones usan algún tipo de difusión para
+las actrices/actores o para toda la imagen, según el estilo deseado. Por ejemplo, un Black Pro-
+Mist 1/4 o 1/8 es común en dramas para obtener luces altas con un suave halo cinematográfico.34
+• 
+• 
+35
+35
+• 
+36
+37
+38
+5
+Estos filtros también se conocen como filtros de niebla  o de bajo contraste, porque introducen
+una ligera veladura que levanta las sombras (negros menos empastados) y hace el roll-off de
+altas luces más suave . Esto puede añadir una atmósfera de ensueño o vintage . Cuándo
+usar  difusión:  Cuando  quieras  quitar  dureza  a  una  imagen  digital  o  dar  una  sensación
+romántica/cinemática. En retratos femeninos, bodas, etc., un toque de difusión da  glow  a las
+luces y piel más suave. En cine, para periodos de tiempo (ej: simular lente antigua), para escenas
+oníricas, recuerdos, o simplemente para lograr que la película digital se vea más como film
+(menos clínicamente nítida). Es importante no abusar; probar diferentes intensidades es clave
+.
+Filtros  de  efecto  “niebla”  o  low-con:  Emparentados  con  los  de  difusión,  están  los  filtros
+denominados  Low  Contrast,  Ultra  Contrast,  Fog,  etc.  Su  objetivo  principal  es  reducir  el
+contraste general  de la escena mediante una ligera veladura uniforme. Técnicamente funcionan
+esparciendo  luz  desde  las  áreas  brillantes  hacia  las  sombras  (veiling  flare),  de  modo  que
+iluminan un poco las sombras y suavizan los destellos fuertes . Son similares a los Mist, y
+de  hecho  a  veces  se  agrupan  juntos.  Un  filtro  Low-Con  puede  ser  útil  para  escenas  con
+iluminación muy dura, para “lavar” un poco la imagen haciéndola más plana y con apariencia de
+film antiguo. Muchos filtros de niebla (Fog) simplemente difunden mucho para simular que hay
+neblina en toda la escena. En la práctica, en digital estos efectos también podrían lograrse en
+posproducción subiendo negros o superponiendo capas difuminadas, pero en cámara dan una
+calidad de luz genuina. Nota:  Los directores de fotografía de cine a veces combinan diffusion  y
+low-con  según la necesidad, o usan técnicas caseras como estirar una media de nylon frente a la
+lente (el llamado Net filter ) para lograr efecto de difusión halagador (esto se hacía en Hollywood
+clásico). 
+Filtro de estrella (Starburst o Cross-Screen):  Es un filtro con patrones de líneas grabadas (rayas
+finas) que convierten los puntos de luz intensa en destellos en forma de estrella  de 4, 6 u 8 puntas
+.  Popular  en  fotografía  nocturna  urbana  (farolas  estrelladas)  o  para  destacar  brillos  en
+joyería,  metales,  etc.  Por  ejemplo,  un  retrato  con  luces  de  fondo  puede  tomar  un  aire  de
+glamour si las luces se convierten en estrellas brillantes. Hay variantes según número de puntas
+e intensidad.  Uso:  Cuando quieras un efecto vistoso en las luces – es claramente un efecto
+especial, no realista, pero puede ser atractivo en ciertas tomas de moda, publicidad o navidad
+(pensemos en fotos de árbol navideño con luces estrelladas). En cine se ha usado en escenas de
+ensueño o musicales para realzar destellos (aunque es menos común que en foto).
+Filtro para astrofotografía (filtro de contaminación lumínica):  También llamado filtro astro  o
+Neutral Night , es un filtro diseñado para bloquear las longitudes de onda de la iluminación
+artificial  (por  ejemplo,  el  tono  anaranjado  de  las  lámparas  de  sodio)  y  así  reducir  la
+contaminación lumínica  en fotografías nocturnas del cielo . Estos filtros dejan pasar la luz
+de las estrellas/nebulosas pero atenuan las dominantes de la iluminación urbana, logrando
+cielos  más  limpios  y  estrellas  de  mayor  contraste.  No  alteran  el  color  de  las  estrellas
+significativamente, solo filtran ese brillo parásito anaranjado o verdoso de las ciudades. Uso:  Si
+vas  a  fotografiar  la  Vía  Láctea  o  estrellas  cerca  de  una  ciudad  o  pueblo,  un  filtro  de
+contaminación lumínica puede mejorar la imagen resultante, aunque no hace milagros si el cielo
+está muy brillante por las ciudades. En cine documental astronómico o de time-lapse nocturno,
+también  son  apreciados.  (Nota:  Para  astrofoto  también  existe  el  filtro  SharpStar  que  no  es
+exactamente de contaminación lumínica sino un filtro con patrón difractivo que ayuda a enfocar
+estrellas creando picos - más que un filtro creativo, es una ayuda técnica para enfoque.)
+Lentes de aproximación (filtros Close-Up o Macro):  Son esencialmente lentes lupas que se
+enroscan  como  filtros,  con  ciertas  dioptrías  (+1,  +2,  +4,  +10,  etc.),  y  permiten  enfocar  a3940
+4142
+• 
+3940
+• 
+43
+• 
+44
+• 
+6
+distancias más cortas  de las que permite el objetivo . No son filtros que cambien luz o color ,
+pero se suelen incluir en este rubro de accesorios de objetivo. Un filtro close-up amplifica la
+imagen como una lupa, reduciendo la distancia mínima de enfoque para hacer macrofotografía
+económica  sin un objetivo macro dedicado . Se pueden combinar varios sumando dioptrías
+(p.ej.  +2  +4  =  +6)  aunque  a  costa  de  calidad  y  aberraciones .  Uso:  Fotografía  macro  de
+iniciación o situaciones puntuales donde solo se necesita más acercamiento (fotografiar detalles,
+insectos, texturas) sin máxima nitidez. En cine, a menudo se emplean dioptrías de enfoque  en
+lentes de cine (que suelen ser más limitadas en enfoque cercano), por ejemplo para tomas de
+primeros planos extremos de ojos, detalles, o con lentes anamórficas que no enfocan de cerca
+. Los directores de fotografía suelen llevar un juego de dioptrías (+1, +2, +3) para estas
+ocasiones . Existe también el  split diopter , medio filtro de aproximación: una mitad tiene
+dioptría  y  la  otra  es  clara,  usado  para  conseguir  el  famoso  efecto  de  “doble
+enfoque” (primerísimo plano y fondo enfocados a la vez, con una línea borrosa en medio) que se
+ve en películas de Brian De Palma, etc. Es un truco avanzado, pero vale mencionarlo como parte
+de las posibilidades creativas con filtros.
+Filtros  de  destello  anamórfico  (Streak  filters):  Son  filtros  especiales  con  líneas  grabadas
+paralelas (a veces se parecen a un vidrio con rayitas) que generan un destello lineal  a partir de las
+luces  brillantes,  imitando  el  típico  flare  horizontal  azul  de  las  lentes  anamórficas  cuando
+apuntan a luces . Por ejemplo, al filmar un faro de coche, obtendrás un destello alargado
+horizontal  atravesando  la  imagen,  como  se  ve  en  muchas  películas  de  ciencia  ficción.  Hay
+versiones  en  distintos  colores  (azul  es  la  clásica,  pero  también  dorado,  rojo,  etc.).  Uso:  En
+fotografía o video cuando se busca deliberadamente el look anamórfico sin usar esas lentes,
+añadiendo  interés  visual  con  flares  estilizados.  Algunos  fotógrafos  los  usan  en  conciertos,
+automoción, o retratos urbanos para dar un toque “cinematográfico”. 
+Prismas y filtros kaleidoscópicos:  No son filtros tradicionales uniformes, pero sí accesorios de
+efecto que se ponen frente al lente. Los prismas  o cristales fractales crean reflejos, duplicaciones
+o distorsiones psicodélicas en la imagen. Algunos fabricantes ofrecen filtros tipo caleidoscopio
+(que duplican la imagen varias veces alrededor).  Uso:  Efectos artísticos, portadas de álbum,
+moda experimental, etc., donde la creatividad prima sobre la realidad. En cine se han usado para
+transiciones oníricas o efectos de drogas, etc.
+Filtros solares:  Un caso muy específico de filtro es el  filtro solar  para fotografía astronómica
+solar . Es básicamente un ND  extremo  (densidad opaca) combinado con bloqueo infrarrojo/UV,
+que permite fotografiar directamente el Sol  (o eclipses) de forma segura, sin freír el sensor ni
+dañar nuestros ojos . Equivale aproximadamente a un ND de 16-20 pasos o más. Suelen ser
+de  cristal  metalizado  o  lámina  especial  (Mylar  aluminizado  o  polímeros  negros).  Uso:
+Únicamente para solares: fotografiar eclipses solares, manchas solares, tránsitos de planetas,
+etc. . ¡Precaución!  Nunca mirar por el visor ni apuntar al Sol con teleobjetivo sin dicho filtro, es
+peligroso.  (En  cinematografía  no  suele  haber  necesidad,  a  menos  que  se  grabe  el  sol
+directamente con telescopios especializados).
+Esta lista cubre los filtros más comunes. Existen otros de nicho (p.ej. filtros IR-pass  para astrofotografía
+de  nebulosas,  filtros  de  efectos  3D  para  cámaras  estereoscópicas,  etc.),  pero  para  un  agente  de
+creación de imágenes con estilo, los anteriores son los más relevantes. 45
+45
+46
+47
+48
+• 
+49
+• 
+• 
+50
+50
+7
+Filtros aplicados al retrato de estudio
+En  fotografía  de  retrato  (especialmente  en  estudio) ,  la  iluminación  controlada  suele  ser  la
+herramienta  principal  para  lograr  cierto  look,  pero  los  filtros  también  pueden  ayudar  a  conseguir
+efectos específicos:
+Control de luz en exteriores:  Al hacer retratos fuera del estudio con luz ambiente intensa, un
+filtro ND suave (1–3 pasos) es un aliado para poder usar aperturas amplias sin sobreexponer al
+sujeto . Por ejemplo, un retrato a contraluz del sol al atardecer , donde quieres fondo
+desenfocado: con ND2/ND4/ND8 podrás disparar en f/1.8 manteniendo el fondo cremoso y al
+sujeto bien expuesto. También, si usas flash de relleno en exterior con luz día, los ND te
+permiten mantenerse bajo la velocidad de sincronización.
+Reducción de brillos y mejora de color:  Un polarizador no es lo primero que asociamos a
+retrato, pero puede ser útil. Si fotografías a una persona y el fondo tiene vegetación o cielo, un
+polarizador hará que esos colores destaquen más saturados. Más importante aún, puede 
+reducir brillos en la piel  (sudor , piel grasa) y en objetos de la escena (ej. quitar reflejo de gafas
+de la persona o de superficies cerca) . Al suprimir reflejos especulares, también suaviza la
+apariencia de poros y texturas, lo cual puede favorecer en belleza. Hay que usarlo con cuidado
+para no quitar todos los brillos naturales de la piel, pero es una herramienta poco común en
+retratos que puede mejorar ciertas situaciones (especialmente retratos en exteriores soleados
+donde la piel brilla mucho).
+Filtros difusores (Mist) para retrato:  Son quizás los favoritos en fotografía de retrato artístico.
+Un filtro Black Mist, White Mist, Soft  o similares suaviza las facciones  del sujeto de forma óptica.
+Esto puede dar un aspecto soñador  y romántico a la toma , muy apropiado en retratos
+femeninos, de niños o estilo vintage. Además, como mencionado, atenúa arrugas e
+imperfecciones de la piel , reduciendo el trabajo de retoque posterior . En estudio, donde a
+veces la luz de flash es muy nítida, un difusor leve (1/8 o 1/4) ayuda a “romper” esa nitidez digital
+y ofrecer un retrato más agradable. Muchos fotógrafos de moda utilizan difusores para lograr
+ese halo  en las luces (por ejemplo, brillo suave en los reflejos del pelo o los ojos). 
+Filtros de color en retratos creativos:  En digital es más común usar geles de color en las luces,
+pero también se podrían emplear filtros de color en la lente para efectos in-camera. Por ejemplo,
+un filtro cálido (como un 81A) en un retrato puede sumarle calidez a la piel de forma global. Más
+tradicional es el uso de filtros de color para retratos en blanco y negro , como vimos: un filtro
+amarillo o naranja delante del objetivo al disparar película B&N produce un negativo con mejor
+contraste en la piel  (tonos de piel ligeramente más claros, fondo azul del cielo más oscuro).
+Si haces retrato B&N digital y quieres simular ese efecto, puedes usar esos filtros físicos o
+aplicarlos vía software posteriormente. 
+Efectos especiales en retrato:  En ciertos contextos de estudio se usan creativamente filtros
+especiales: por ejemplo, un filtro de estrella  en una sesión de fotos glamour con joyería, para
+que las luces de los pendientes o diamantes destellen con puntas. O un prisma  frente al lente
+para reflejar duplicaciones del modelo (muy de moda en retratos experimentales). Incluso 
+streak filters  si quieres un efecto moderno tipo videoclip con luces LED detrás del sujeto
+haciendo flares lineales. Estas técnicas deben usarse según la temática: un retrato corporativo
+no va a llevar un filtro de estrella, pero un retrato de fantasía quizás sí. 
+En resumen, para retrato profesional , los filtros más útiles suelen ser: ND (control de luz), polarizador
+(control de reflejos), difusores/Mist  (suavizar y dar atmósfera) y en menor medida filtros de color para
+B&N o efectos creativos puntuales. La mayoría de retratos de estudio tradicionales se logran sin filtros
+artísticos, apoyándose en maquillaje, iluminación suave (softboxes) y retoque digital. Pero conocer
+estos filtros te permite ofrecer estilos diferentes cuando el cliente o proyecto lo requiera (por ejemplo,
+retrato con look cine clásico , donde un poco de difusión y un tono cálido pueden vender esa estética).• 
+51
+• 
+14
+• 
+37
+38
+• 
+30
+• 
+8
+Filtros en cinematografía (rodajes de cine)
+En el mundo del cine, los filtros de lente juegan un papel crucial para lograr la imagen deseada desde
+la cámara , complementando a la iluminación y al etalonaje (color grading) posterior . Muchos de los
+filtros ya descritos se usan también en cinematografía, a saber:
+ND y ND graduados:  Son omnipresentes. Las cámaras de cine suelen rodar con obturador fijo y
+aperturas medianas donde la lente rinde bien, así que en exteriores soleados la única forma de
+no sobreexponer es metiendo ND. En cine se utilizan juegos de ND (0.3, 0.6, 0.9, 1.2... que
+corresponden a 1, 2, 3, 4 stops, etc.) y ND variables en drones o cámaras pequeñas. Los ND
+graduados también se han usado históricamente para cielos; aunque hoy día muchas
+producciones prefieren capturar todo plano y luego gradar el cielo en post, directores de foto
+puristas aún colocan filtros GND en locación para “ver” el resultado en cámara. Además, como
+mencionamos, en digital de cine son comunes los IRND  (ND con bloqueo infrarrojo) para evitar
+dominantes magenta con densidades altas .
+Polarizador:  El director de fotografía lo usa igual que en foto: elimina reflejos de vidrios (útil
+para poder filmar a través de ventanas sin ver el equipo reflejado), quita brillos de carrocerías,
+mejora cielo y nubes en tomas de paisaje, etc. Eso sí, en cine un polarizador se suele poner en la 
+matte box  (portafiltros) y se rota a mano mientras se mira el monitor hasta lograr el efecto
+deseado. Hay que vigilar no exceder la polarización en tomas amplias de cielo porque puede
+verse desigual (efecto “cielo manchado” si se usa angular y polarizador). También hay
+polarizadores especiales de cine, como Gold-Blue Polarizer , para efectos creativos (ya
+mencionado, da reflejos azules o dorados). Un polarizador resta luz (2 stops típicamente), lo cual
+en cine significa potencialmente subir la iluminación o el ISO del sensor , pero es un intercambio
+habitual cuando se necesita el efecto.
+Difusores y filtros de efecto cinematográfico:  Aquí es donde los filtros brillan en cine. Como
+regla general, casi toda película o serie tiene algún filtro de difusión o efecto en la lente , salvo
+contadas excepciones. Los Black Pro-Mist  de Tiffen son legendarios en Hollywood: reducen la
+nitidez digital, bajan el contraste y “florean” las altas luces  dando ese aspecto fílmico suave
+. Otros directores prefieren Hollywood Black Magic  (similar al Pro-Mist pero combinado con
+low-con), o Classic Soft  (con patrón de lentes micro), Pearlescent  (añade un brillo perlado a
+highlights), Glimmerglass  (tiene partículas que brillan para glamour), etc. . Estos filtros de
+difusión se escogen como se eligen los objetivos , por la calidad que dan a la imagen. Algunos
+añaden más halación (halo) en las luces, otros solo difuminan microdetalle sin halos. En cine
+digital moderno, es habitual usar intensidades bajas (1/8, 1/4) para no delatar mucho el efecto,
+logrando que el público sienta la imagen más “orgánica” sin saber exactamente por qué. Además
+de difusores, se emplean filtros Low Contrast  o Ultra Contrast  cuando se quiere reducir la
+diferencia entre sombras y luces sin un efecto de halo fuerte – por ejemplo, en un exterior
+solado, un LowCon puede levantar ligeramente las sombras de las arrugas de un actor sin
+parecer que lleva “vaselina” en la lente, simplemente baja el rango dinámico aparente (las
+sombras no son tan negras, los brillos no tan brillantes) . Muchos thrillers  de los 70-80
+usaban LowCon para un aura ligera de niebla. También existen los filtros Fog  (Tiffen Double Fog,
+etc.) que simulan niebla difuminando más uniformemente todo el cuadro. En resumen, la
+combinación de Mist/Diffusion/LowCon  es parte del estilo cinematográfico : no es casualidad
+que las películas se vean diferentes a video casero; estos filtros aportan esa calidad de highlight
+roll-off suave y textura en cámara que luego se complementa con la gradación de color .
+Filtros de color en cine:  Como ya se dijo, en digital se usan menos, pero en filmación con
+película sí eran comunes filtros correctores (85, etc.). En algunas producciones actuales, por
+estilo se filtra la lente: por ejemplo, Steven Spielberg en West Side Story (2021)  usó filtros de color
+sutiles en cámara para lograr ciertos tonos vintage. Los filtros degradados de color se usaban en
+los 90 para videoclips o acción (cielos dramáticos rojos, etc.), hoy pasados de moda. No obstante,• 
+2223
+• 
+• 
+36
+52
+3940
+• 
+9
+en cámara se siguen usando a veces filtros de densidad neutra con tintes  para estilizar: por
+ejemplo, un Filtro Coral ND  que combina ligera calidez con densidad, para exteriores con piel
+bonita.
+Especializados cinematográficos:  Un cinematógrafo tiene también trucos de filtro como: poner
+una red de nylon estirada  delante o detrás del lente (da un efecto difusor halagador distinto,
+con destellos en las altas luces tipo “velo” muy apreciado en los 50s); filtros de estrella  de 4 o 6
+puntas en escenas de fiestas para que las luces brillen; split diopters  para enfoque dual como
+mencionamos; filtros de acercamiento  para macros con lentes normales; y los True-Streak
+(línea de destello anamórfico) si se rueda con lentes esféricas pero se quiere un destello de lens
+flare horizontal azul . 
+En definitiva, los filtros en cine son herramientas creativas tanto como técnicas. Un buen director de
+fotografía elige la combinación de filtros igual que la iluminación, para construir la atmósfera. Por
+ejemplo, en una escena de época iluminada con velas, podría usar un filtro  Pro-Mist  para que las
+llamas de las velas tengan un brillo difuso romántico, y quizá un filtro tabaco degradado  para añadir
+calidez en la parte superior del cuadro. O en una escena de alto impacto de día, quizá use solo un
+polarizador y ND  para colores ricos y control de exposición, manteniendo la nitidez dura si ese es el
+look buscado (piensa en películas de acción muy contrastadas, a veces no usan difusión para lograr
+imágenes más crudas). Todo depende de la estética. 
+Conclusión:  Conocer los diferentes filtros fotográficos y cinematográficos te permitirá enriquecer la
+generación de imágenes con descripciones de estilo muy precisas. Al crear prompts para IA como
+Midjourney, DALL-E o Stable Diffusion, puedes mencionar estos filtros para evocar sus efectos: por
+ejemplo, “retrato cinematográfico con suave resplandor de highlights (efecto filtro difusor tipo Black
+Pro-Mist)”, o “paisaje urbano al atardecer con cielo dramático equilibrado (uso de filtro degradado ND)”.
+Incorporar términos como polarizing filter , soft focus filter , warm filter , anamorphic lens flare , etc., puede
+ayudar a guiar al modelo hacia la estética deseada. Con la información de este manual, tienes una base
+de datos completa de filtros  y sus resultados, lista para adaptar a cualquier prompt y lograr imágenes
+súper realistas y profesionales  tal como las imaginarías a través de la lente de una cámara real. ¡Feliz
+creación! 📷
+Referencias:  Los efectos y usos descritos se basan en fuentes especializadas en fotografía y cine: Kase
+Filters , PhotoPills , y guías técnicas de cinematografía como Wolfcrow ,
+entre otras. Cada filtro mencionado ha demostrado su utilidad en casos prácticos – desde reducir
+reflejos para mejorar colores , hasta crear atmósferas oníricas con difusión  o capturar cielos
+estrellados más limpios . Con este conocimiento, podrás darle a tus imágenes generadas ese toque
+auténtico de fotografía profesional. ¡A experimentar! 
+Filtros Fotográficos: La Guía Definitiva (2025) | PhotoPills
+https://www.photopills.com/es/articulos/guia-fotografia-filtros
+The Complete Guide to Lens Filters for
+Cinematography
+https://wolfcrow.com/the-complete-guide-to-lens-filters/
+Guía de Tipos de Filtros
+Fotográficos | Kase
+https://kasefilters.eu/es/informacion-util/guias/tipos-de-filtros-fotograficos/
+¿Qué Filtros de Objetivo Usar para Retratos?
+https://kasefilters.eu/es/blog/uso-filtros-objetivo-retratos• 
+49
+3 8 17 53 54 50 55 39
+9 37
+44
+133 50 54
+2 6 710 11 13 16 22 23 41 42 47 48 52 55
+3 4 5 8 912 15 17 20 24 25 26 27 28 29 34 35 43 44 53
+14 18 19 21 30 31 32 37 38 51
+10
+El filtro Black Pro-Mist Su función básica es reducir la nitidez ...
+https://www.instagram.com/reel/DFa9ndnSwut/?hl=en
+Understanding Low Contrast Filters
+https://www.red.com/red-101/low-contrast-filters
+Filtros close up: macrofotografía con lentes de aproximación - Foto24
+https://blog.foto24.com/fotografia-macro-filtros-close-up/
+Blue Streak Filters - 44BLUESTREAK2 – The Tiffen Company
+https://tiffen.com/products/blue-streak-filters?srsltid=AfmBOoq-yvex8fNt0Au9iOQ6RZtwzjQnEkdoZr8hM48vRxC0h5HlEGuc36
+39 40
+45 46
+49
+11

@@ -1,0 +1,335 @@
+{
+  "software": "Capture One Pro",
+  "version": "genérico (aplicable a C1 21–16+)",
+  "idioma": "es-ES",
+  "manual": {
+    "introduccion": {
+      "descripcion": "Capture One Pro es un revelador RAW y editor profesional con edición no destructiva, capas de ajuste, color avanzado y tethering líder.",
+      "puntos_clave": [
+        "Edición no destructiva con variantes.",
+        "Motor RAW de alta calidad y color avanzado.",
+        "Capas y máscaras locales dentro del flujo RAW.",
+        "Tethering rápido y estable para estudio.",
+        "Catálogos y Sesiones según proyecto."
+      ]
+    },
+    "interfaz": {
+      "areas": [
+        {
+          "nombre": "Visor",
+          "funcion": "Previsualización en alta calidad de la imagen seleccionada.",
+          "tips": ["Usa antes/después para validar cambios.", "Activa soft-proofing al preparar exportación."]
+        },
+        {
+          "nombre": "Navegador",
+          "funcion": "Miniaturas para selección, filtrado y clasificación.",
+          "tips": ["Atajos para estrellas (1–5) y colores.", "Modo tira de película vs cuadrícula."]
+        },
+        {
+          "nombre": "Pestañas de herramientas",
+          "funcion": "Agrupan Biblioteca, Color, Exposición, Detalles, Composición, Capas, Exportación, Captura.",
+          "tips": ["Personaliza el layout y guarda tu espacio de trabajo."]
+        },
+        {
+          "nombre": "Barra de herramientas",
+          "funcion": "Accesos rápidos: zoom, recorte, máscara, exportar, deshacer/rehacer.",
+          "tips": ["Añade/quita iconos que uses a diario."]
+        }
+      ]
+    },
+    "organizacion": {
+      "modos": [
+        {
+          "tipo": "Catalogo",
+          "uso_recomendado": "Bibliotecas grandes, archivo central, búsquedas y álbumes inteligentes.",
+          "caracteristicas": ["Colecciones de usuario", "Álbumes/Proyectos/Grupos", "Importación con referencias o gestionado"]
+        },
+        {
+          "tipo": "Sesion",
+          "uso_recomendado": "Trabajos puntuales y tethering. Carpeta autocontenida (Captures/Selects/Output/Trash).",
+          "caracteristicas": ["Navegación por carpetas", "Rápido, portátil", "Sin necesidad de importar a BBDD"]
+        }
+      ],
+      "flujo_sugerido": "Define modo (Catálogo/Sesión) ? Importa ? Culling (estrellas/colores) ? Álbum/Selección ? Edición."
+    },
+    "importacion": {
+      "dialogo": {
+        "origen": "Carpeta o tarjeta.",
+        "accion": ["Copiar", "Mover", "Añadir/Referenciar"],
+        "backup": "Copia simultánea opcional a otro disco.",
+        "renombrado": "Plantillas con tokens (fecha, contador, nombre).",
+        "metadatos": "Copyright, keywords.",
+        "estilos_auto": "Aplicar estilos/presets en importación."
+      },
+      "ejemplo": {
+        "descripcion": "Importa desde tarjeta, copia a /Fotos/2025/Viaje, renombra a VIAJE_{contador4}, aplica estilo ‘Base RAW’ y backup a disco externo."
+      }
+    },
+    "edicion_basica_exposicion_tono": {
+      "herramientas": [
+        {
+          "nombre": "Exposure",
+          "controles": ["Exposición", "Contraste", "Brillo", "Saturación"],
+          "uso": "Ajuste global del brillo/contraste/color base.",
+          "errores_comunes": ["Subir brillo en exceso lavando negros.", "Sobre-saturación de pieles."]
+        },
+        {
+          "nombre": "Balance de blancos",
+          "controles": ["Temperatura", "Matiz", "Cuentagotas"],
+          "uso": "Neutralizar dominantes de luz.",
+          "tip": "Apunta a un gris/blanco neutro real."
+        },
+        {
+          "nombre": "HDR (High Dynamic Range)",
+          "controles": ["Altas luces", "Sombras", "Blancos", "Negros"],
+          "uso": "Recuperación selectiva de extremos de rango.",
+          "advertencias": ["Levantar sombras añade ruido.", "Bajar luces en exceso apaga la imagen."]
+        },
+        {
+          "nombre": "Niveles",
+          "uso": "Definir puntos de negro/blanco y gamma.",
+          "tip": "Cierra negros para limpiar niebla baja."
+        },
+        {
+          "nombre": "Curvas (RGB/Luma)",
+          "uso": "Contraste y color por canal; curva en S para ‘punch’.",
+          "tip": "Usa Luma si no quieres alterar saturación."
+        },
+        {
+          "nombre": "Claridad y Estructura",
+          "modos": ["Natural", "Punch", "Neutral", "Classic"],
+          "uso": "Contraste local (claridad) y microdetalle (estructura).",
+          "consejo": "Retrato: claridad negativa suave; paisaje: punch moderado."
+        }
+      ],
+      "ejemplo": {
+        "situacion": "Retrato subexpuesto con cielo quemado.",
+        "pasos": [
+          "Ajusta WB con cuentagotas en camiseta blanca.",
+          "Exposición +0.7; Contraste +10; Brillo +5.",
+          "HDR: Altas luces -70 (recupera cielo), Sombras +35 (rostro).",
+          "Curva Luma en S suave.",
+          "Claridad -10 (Natural) en capa local del rostro (ver ‘capas’)."
+        ]
+      }
+    },
+    "color_avanzado": {
+      "editor_color": {
+        "modos": [
+          "Básico (rangos predefinidos HSL)",
+          "Avanzado (selector y rango fino con suavizado)",
+          "Tono de piel (uniformidad Hue/Sat/Lightness)"
+        ],
+        "operaciones": [
+          "Seleccionar color con cuenta gotas.",
+          "Ajustar Hue/Sat/Lightness para ese rango.",
+          "Crear máscara desde selección para trabajar en capa."
+        ],
+        "ejemplo": "Uniformiza piel: selecciona mejilla ? sube Uniformidad de Tono y Saturación hasta homogeneizar rojeces."
+      },
+      "balance_color": {
+        "ruedas": ["Sombras", "Medios tonos", "Altas luces", "Master"],
+        "uso": "Color grading (ej. teal & orange).",
+        "tip": "Haz el grading tras tener la base tonal y WB listos."
+      },
+      "otros": {
+        "dehaze": "Recupera contraste en bruma.",
+        "perfil": "Elige ICC/Curva base (p.ej., ProStandard) como punto de partida.",
+        "calibracion": "Ajustes finos por canal si es necesario."
+      }
+    },
+    "detalles_nitidez_ruido": {
+      "enfoque": {
+        "parametros": ["Cantidad", "Radio", "Umbral"],
+        "flujo": "Ajusta al 100% de zoom (ojos/áreas clave).",
+        "recetas": [
+          "Paisaje: Cantidad alta, Radio 0.7–1.0, Umbral bajo.",
+          "Retrato: Cantidad moderada, Radio 0.5–0.7, Umbral medio."
+        ]
+      },
+      "reduccion_ruido": {
+        "parametros": ["Luminancia", "Color", "Detalles", "Single Pixel (hot pixels)"],
+        "tips": ["Mejor un poco de ruido que plastificar.", "Más luminancia en sombras levantadas."],
+        "nota": "Efectivo sobre RAW; limita detalles si se abusa."
+      },
+      "moiré": {
+        "uso": "Aplicar localmente (capa) en textiles/patrones.",
+        "tip": "Enmascara solo la zona afectada."
+      }
+    },
+    "optica_y_composicion": {
+      "correccion_lente": {
+        "perfil": "Distorsión, viñeteo, AC/Fringe.",
+        "consejo": "Desactiva viñeteo automático si te gusta la caída natural."
+      },
+      "recorte_y_rotacion": {
+        "proporciones": ["Libre", "1:1", "3:2", "4:5", "16:9", "Personalizadas"],
+        "enderezar": "Herramienta de línea o ángulo manual.",
+        "tip": "Activa cuadrícula/regla de tercios."
+      },
+      "keystone_perspectiva": {
+        "modos": ["Vertical", "Horizontal", "Completo", "Guiado", "Auto"],
+        "controles": ["Vertical", "Horizontal", "Skew", "Aspect", "Amount"],
+        "consejo": "Reduce Amount al 70–90% para resultado natural."
+      }
+    },
+    "ajustes_locales_capas": {
+      "capas": {
+        "limite": 16,
+        "opacidad": "Control por capa",
+        "nombres": "Usa nombres descriptivos (Cielo, Rostro, Fondo)."
+      },
+      "mascaras": [
+        "Pincel / Borrador",
+        "Degradado Lineal / Radial",
+        "Magic Brush / Magic Eraser (IA)",
+        "Rango de Luma (restringe por luminancia)"
+      ],
+      "retoque": [
+        "Heal (corrección con mezcla)",
+        "Clone (copia exacta)"
+      ],
+      "ejemplos": [
+        {
+          "titulo": "Paisaje con cielo dramático",
+          "pasos": [
+            "Capa ‘Cielo’ con degradado lineal.",
+            "Exposición -0.5, Claridad +20, Temp -5 (más frío).",
+            "Opacidad de capa 70%."
+          ]
+        },
+        {
+          "titulo": "Retrato: realce facial",
+          "pasos": [
+            "Capa ‘Rostro’ con pincel.",
+            "Sombras +15, Exposición +0.3, Temp +3.",
+            "Estructura -15 para suavizar."
+          ]
+        },
+        {
+          "titulo": "Eliminar distracción",
+          "pasos": [
+            "Capa Heal sobre cable en cielo.",
+            "Ajusta fuente si es necesario.",
+            "Refina bordes con borrador suave."
+          ]
+        }
+      ]
+    },
+    "estilos_y_presets": {
+      "definiciones": {
+        "preset": "Ajuste guardado de una sola herramienta.",
+        "estilo": "Conjunto de múltiples herramientas (posible con capas)."
+      },
+      "usos": [
+        "Consistencia de look en series.",
+        "Aplicación en importación.",
+        "Aplicar como capa para controlar opacidad."
+      ],
+      "consejo": "Guarda estilos sin incluir recorte/exposición a menos que sea intencional."
+    },
+    "tethering_captura_conectada": {
+      "requisitos": "Cámara soportada + cable/wi-fi según modelo.",
+      "controles": [
+        "Parámetros de cámara (ISO, velocidad, WB).",
+        "Live View con enfoque remoto.",
+        "Nombrado/Carpeta de destino por sesión."
+      ],
+      "flujo_tipico": "Crea Sesión ? Define carpeta Captures y renombrado ? Live View/controles ? Dispara ? Califica/selecciona en tiempo real.",
+      "colaboracion": [
+        "Capture Pilot (iOS/Web) para cliente/estilista.",
+        "Capture One Live (revisión remota)."
+      ]
+    },
+    "exportacion": {
+      "exportador": {
+        "recetas": "Múltiples salidas simultáneas (p.ej., TIFF 16b + JPEG web).",
+        "parametros": [
+          "Formato (JPEG/TIFF/PSD/PNG/DNG/Original)",
+          "Perfil de color (sRGB/AdobeRGB/ProPhoto)",
+          "Escala (px/%)",
+          "Enfoque de salida (web/impresión)",
+          "Metadatos (incluir/excluir GPS)",
+          "Marca de agua (texto/PNG)"
+        ],
+        "nombres_archivo": "Tokens para automatizar (fecha, contador, colección).",
+        "ubicacion": "Rutas fijas o relativas por receta."
+      },
+      "ejemplo_recetas": [
+        {
+          "nombre": "TIFF_Impresion",
+          "formato": "TIFF 16-bit",
+          "perfil": "AdobeRGB",
+          "escala": "100%",
+          "enfoque_salida": "Impresión papel mate",
+          "destino": "/Entrega/Alta/"
+        },
+        {
+          "nombre": "JPEG_Web",
+          "formato": "JPEG 85",
+          "perfil": "sRGB",
+          "escala": "Lado largo 2048 px",
+          "marca_de_agua": "logo.png",
+          "destino": "/Entrega/Web/"
+        }
+      ]
+    },
+    "automatizacion_y_flujo": {
+      "lote": [
+        "Sincroniza ajustes entre seleccionadas.",
+        "Copiar/pegar ajustes (incluidas capas, opcional).",
+        "Ajustes automáticos como punto de partida."
+      ],
+      "sugerencias": [
+        "Crea estilos ‘Base RAW’ por cámara/iluminación.",
+        "Usa Álbumes Inteligentes para estados (5?, editadas, exportadas).",
+        "Guarda un espacio de trabajo por tipo de trabajo (bodas/estudio/producto)."
+      ]
+    },
+    "ejercicios": [
+      {
+        "titulo": "RAW a resultado final",
+        "pasos": [
+          "WB ? Exposición ? HDR ? Curva Luma.",
+          "Editor de Color (azules del cielo).",
+          "Capas: cielo (degradado), sujeto (pincel).",
+          "Detalles: enfoque y NR al 100%.",
+          "Exporta con dos recetas (impresión/web)."
+        ]
+      },
+      {
+        "titulo": "Retrato natural",
+        "pasos": [
+          "Skin Tone: uniformidad moderada.",
+          "Claridad negativa leve en rostro (capa).",
+          "Color Balance cálido en luces, frío en sombras.",
+          "Heal para imperfecciones puntuales."
+        ]
+      },
+      {
+        "titulo": "Arquitectura con Keystone",
+        "pasos": [
+          "Keystone guiado vertical + Aspect.",
+          "Amount 80–90% para naturalidad.",
+          "Curva S suave y Dehaze leve.",
+          "Viñeteo creativo negativo -0.2."
+        ]
+      }
+    ],
+    "errores_comunes": [
+      "Subir Claridad/Estructura en retratos generando piel áspera.",
+      "HDR extremo que produce aspecto ‘plano’.",
+      "NR de luminancia alta que plastifica detalles.",
+      "Exportar para web en AdobeRGB (usar sRGB).",
+      "Olvidar enfoque de salida tras escalar."
+    ],
+    "glosario": {
+      "Variante": "Versión virtual con ajustes distintos sin duplicar RAW.",
+      "Preset": "Ajuste guardado de una sola herramienta.",
+      "Estilo": "Conjunto de ajustes multi-herramienta (puede incluir capas).",
+      "Keystone": "Corrección de perspectiva.",
+      "Tethering": "Disparo con cámara conectada al ordenador.",
+      "Luma": "Canal de luminancia (brillo sin color)."
+    }
+  }
+}

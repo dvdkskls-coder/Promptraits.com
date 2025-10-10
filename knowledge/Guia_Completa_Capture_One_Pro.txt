@@ -1,0 +1,918 @@
+Guía Completa de Capture One Pro: Tutorial y
+Manual de Usuario
+Introducción a Capture One Pro
+Capture One Pro es un software profesional de edición y revelado fotográfico RAW, diseñado para
+ofrecer un control profundo sobre cada aspecto de la imagen. A diferencia de los editores básicos,
+Capture One trabaja con edición no destructiva : todas las modificaciones se almacenan como ajustes
+sin alterar el archivo original . Esto permite crear variantes  (copias virtuales) de una misma foto con
+diferentes  ediciones  sin  duplicar  el  archivo  RAW .  Capture  One  Pro  está  orientado  tanto  a
+fotógrafos  principiantes  como  avanzados,  brindando  herramientas  de  nivel  básico  (ajustes
+automáticos,  plantillas)  hasta  funciones  avanzadas  (capas,  máscaras,  ajustes  por  lotes,  tethering
+profesional). 
+¿Qué hace especial a Capture One?  Ofrece un motor de revelado RAW de alta calidad, un destacado
+control del color , y la capacidad de trabajar con  capas de ajuste locales  (similar a Photoshop pero
+dentro del revelado RAW). También es conocido por su rendimiento en tethering  (disparo conectado)
+en estudios profesionales y por su sistema de catálogos y sesiones  flexible para organizar fotos. En
+esta guía completa, aprenderás todas las funciones principales de Capture One Pro , cómo aplicarlas
+y ejemplos prácticos para entender mejor cada herramienta, desde la importación de las imágenes
+hasta la exportación final. ¡Comencemos!
+Interfaz y Elementos Principales de Capture One
+La interfaz de Capture One se compone de cuatro áreas fundamentales :
+El Navegador de Imágenes : Muestra las miniaturas de tus fotos y permite calificarlas (estrellas),
+etiquetarlas por color , ordenarlas y filtrarlas, facilitando el culling  o selección de las mejores
+tomas . Puedes alternar entre vista de tira de película (filmstrip) o cuadrícula según
+prefieras. 
+El Visor (Viewer) : Es la ventana central donde se previsualiza la imagen seleccionada a tamaño
+grande y con alta calidad. Cualquier ajuste que realices se refleja instantáneamente en el Visor ,
+permitiéndote evaluar los cambios en tiempo real . 
+Las Pestañas de Herramientas (Tool Tabs) : Son un conjunto de pestañas o íconos
+normalmente situados a la izquierda (o arriba) que agrupan todas las herramientas de edición y
+gestión esenciales. Por ejemplo, hay pestañas para Biblioteca, Color , Exposición, Detalles, Ajustes
+Locales, Exportación, etc. Al hacer clic en una pestaña, verás los paneles de herramientas
+correspondientes (como ajustes de color , controles de exposición, enfoque y más) . Estas
+pestañas son personalizables; puedes añadir o quitar herramientas según tu flujo de trabajo. 
+Barra de Menús y Barra de Herramientas : En la parte superior , la barra de menús (en Mac/
+Windows) y una barra de herramientas ofrecen acceso estructurado a todas  las funciones del
+software . La barra de herramientas incluye íconos de uso rápido, como el zoom, las
+herramientas de cursor (p.ej. recortar , mover , máscara), el botón de exportar , deshacer/rehacer ,
+vista antes/después, entre otros.1
+23
+45
+• 
+64
+• 
+78
+• 
+910
+• 
+1112
+1
+Elementos principales de la interfaz de Capture One Pro: a la izquierda las pestañas de herramientas (Library,
+Capture, Lens, Color, Exposure, etc.), en el centro el Visor mostrando la foto seleccionada, y a la derecha el
+Navegador de imágenes en modo tira de película. La barra de herramientas superior provee accesos rápidos
+a funciones comunes.
+Uso básico de la interfaz:  Puedes personalizar el espacio de trabajo moviendo paneles o creando tus
+propias pestañas de herramientas. Por ejemplo, si editas en una pantalla pequeña, puedes ocultar el
+Navegador (tecla G o menú Ver) para maximizar el Visor . Igualmente, es posible tener varias ventanas
+de visor (por ejemplo, en Capture One Studio) o cambiar entre modos de vista (solo una imagen, vista
+comparativa  de  múltiples  imágenes,  etc.).  Familiarízate  con  la  interfaz:  selecciona  una  foto  en  el
+Navegador , verifica que aparece en el Visor , y navega por las pestañas de herramientas para ver los
+distintos  controles  disponibles.  Esto  será  la  base  para  aplicar  los  ajustes  que  explicaremos  a
+continuación.
+Organización de Fotos: Catálogos vs. Sesiones
+Antes de empezar a editar , Capture One te permite organizar tus imágenes de dos formas: mediante
+Catálogos  o  Sesiones .  Es  importante  entender  sus  diferencias  para  escoger  el  flujo  de  trabajo
+adecuado :
+Catálogo:  Es una base de datos central que referencia todas tus fotos, ideal para administrar
+bibliotecas grandes o proyectos a largo plazo. Un Catálogo puede contener miles de imágenes
+organizadas en colecciones , con potentes opciones de búsqueda, uso de Álbumes , Álbumes
+inteligentes (Smart Albums) , Proyectos  y Grupos  para clasificar fotos por temas o clientes
+. Los Archivos RAW originales no se alteran , y puedes decidir si se guardan dentro del
+catálogo (catálogo gestionado) o fuera en carpetas a tu elección (catálogo referenciado) . Un
+mismo catálogo puede combinar ambas modalidades. Los catálogos son recomendados "cuando
+necesitas manejar y buscar un volumen grande de imágenes de múltiples sesiones, con herramientas
+avanzadas de organización y un archivo centralizado" . 
+Sesión:  Es un proyecto autocontenido en una carpeta, óptimo para sesiones de fotos puntuales,
+trabajos de cliente o flujo de tethering en estudio . Al crear una sesión, Capture One
+genera una estructura de carpetas (Captures, Selects, Output, Trash) dentro de una carpeta
+principal. Las imágenes importadas (o capturadas) en una sesión se guardan típicamente en la
+carpeta Captures, y puedes mover las seleccionadas a Selects, etc., manteniendo todo el
+proyecto junto en el sistema de archivos . Las sesiones ofrecen acceso rápido y sencillo a los
+archivos locales , sin necesidad de importar a una base de datos; simplemente navegas por
+carpetas en la Biblioteca de la sesión. Son ideales "cuando trabajas en un solo shoot de corta
+duración, especialmente con cámara conectada, y quieres mantener todo en un esquema de carpetas
+simple y portátil" .
+En resumen, “un catálogo es más adecuado para crear o mantener una biblioteca de imágenes existente y
+proyectos grandes en curso, mientras que una sesión es más conveniente para proyectos más pequeños e
+individuales” . No estás obligado a elegir permanentemente : puedes tener múltiples catálogos y
+sesiones coexistiendo (según te convenga y el espacio en disco) e incluso importar sesiones dentro de
+catálogos  si más adelante deseas consolidar tu trabajo .
+Uso práctico:  Si vienes de Lightroom, el  Catálogo  de Capture One funciona de forma similar al de
+Lightroom  –  es  tu  biblioteca  maestra.  En  cambio,  la  Sesión  se  asemeja  a  crear  una  carpeta
+independiente  por  sesión  de  fotos  (como  solía  hacerse  en  flujos  de  trabajo  de  Capture  One  para
+sesiones de estudio). Por ejemplo, un fotógrafo de bodas podría usar un Catálogo para todo el año con
+todas las bodas (organizadas por álbumes y proyectos), mientras que un fotógrafo de estudio que hace45
+1314
+• 
+15
+16
+17
+13
+• 
+1814
+19
+14
+20
+2122
+2
+tethering podría preferir crear una nueva Sesión para cada cliente o sesión de retrato, para mantener
+los archivos separados y transferir fácilmente esa carpeta al cliente. Ten en cuenta que puedes cambiar
+entre distintos catálogos o sesiones en cualquier momento  desde el menú Archivo > Abrir  sin
+problema.
+Importación y Biblioteca de Imágenes
+Una vez decidido el modo de organización, necesitarás  importar tus fotografías  en Capture One. El
+proceso difiere levemente si usas Catálogo o Sesión, pero en ambos casos se inicia desde Archivo > 
+Importar imágenes... . 
+Al importar , Capture One mostrará un diálogo donde eliges la carpeta de origen (por ejemplo la tarjeta
+de memoria o una carpeta en tu disco) y varias opciones importantes :
+Puedes copiar las imágenes  a una nueva ubicación (útil si quieres descargar desde una tarjeta a
+tu disco) o simplemente referenciarlas en su ubicación actual.
+Tienes opciones para hacer una copia de seguridad  simultánea a otra unidad (recomendable
+para asegurar tus RAW), renombrar los archivos según una plantilla (por ejemplo, agregar fecha
+o proyecto al nombre) , y agregar metadatos de copyright o descripción durante la
+importación.
+En el caso de un Catálogo , las fotos importadas aparecerán en la colección “Última importación”
+y en “Todas las imágenes” del Catálogo, y puedes organizarlas en Álbumes  o Proyectos  desde la
+herramienta Biblioteca . En una Sesión , si importas copiando archivos, típicamente querrás
+elegir la carpeta Captures  de la sesión como destino, para mantener la estructura ordenada. Las
+imágenes de sesión aparecen bajo la sección Sesión > Carpetas  de la Biblioteca (por defecto en
+Captures) sin necesidad de colecciones, aunque también puedes crear Álbumes de sesión  si lo
+deseas.
+Biblioteca  y  Exploración:  La  pestaña  Biblioteca  te  permite  navegar  por  todas  tus  fotos.  En  un
+catálogo,  verás  secciones  para  Carpetas  (ubicaciones  físicas),  Colecciones  del  Usuario  (álbumes,
+proyectos)  y  Colecciones  del  Catálogo  (vistas  automáticas  como  Todas  las  Imágenes ,  Última
+Importación ,  Trash ). En una sesión, verás las cuatro carpetas principales (Captures, Selects, Output,
+Trash) y cualquier favorito o álbum que hayas creado . Puedes marcar carpetas como Favoritos
+para acceder rápido. Para encontrar fotos, puedes usar la barra de búsqueda para filtrar por nombre,
+fecha o texto en metadatos; o crear Álbumes Inteligentes  con criterios (por ejemplo, todas las fotos
+con 5 estrellas del año 2025). Un flujo típico sería: importas tus nuevas fotos (aparecen marcadas como
+última importación ), luego las revisas en el Visor , asignas calificaciones (1-5 estrellas) o etiquetas de color
+para indicar tus selecciones, y creas un álbum con las seleccionadas para editar .
+Ejemplo:  Imagina que vuelves de vacaciones con 500 fotos en tu cámara. Podrías crear un  Catálogo
+"Vacaciones 2025" , importar todas las fotos desde la tarjeta (indicando que las copie a tu disco en una
+carpeta organizada por fecha). Al terminar la importación, revisas las miniaturas en el Navegador ,
+aplicas estrellas (5★ a las mejores, 3★ a las decentes, etc.) , luego en la Biblioteca creas un Álbum
+llamado "Selección Final" y arrastras las fotos 5★ a ese álbum. Ahora tienes tu selección lista para editar
+en la siguiente etapa.23
+• 
+• 
+24
+• 
+1925
+6
+3
+Ajustes Básicos de Exposición y Tono
+Pasemos a la pestaña de Exposición , donde se encuentran las herramientas para ajustar la iluminación,
+contraste  y  tono  general  de  la  imagen.  Estas  son  fundamentales  para  revelar  correctamente  tus
+archivos RAW:
+Exposición, Contraste, Brillo, Saturación:  La herramienta  Exposure  te ofrece deslizantes para
+estos cuatro parámetros globales. El deslizador de Exposición  ajusta el brillo general (igual que
+cambiar la exposición de la toma), Contraste  aumenta o reduce la diferencia entre tonos claros y
+oscuros, Brillo  actúa sobre los medios tonos (iluminándolos u oscureciéndolos sin afectar tanto
+extremos)  y  Saturación  controla  la  intensidad  de  los  colores .  Ejemplo:  si  una  foto  está
+subexpuesta (oscura), puedes aumentar Exposición  +0.5 o +1 EV para aclararla. Si tras esto los
+negros quedan algo lavados, sube un poco el Contraste  para recuperar profundidad. Al mismo
+tiempo, revisa la Saturación : una ligera subida puede hacer los colores más vivos, pero cuida de
+no sobresaturar pieles u otros elementos. Cada imagen requerirá un balance diferente; por
+suerte, todos estos ajustes son no destructivos, así que puedes experimentar libremente. 
+Balance de Blancos:  También en esta pestaña (o a veces en la pestaña de Color) encontrarás la
+herramienta de Balance de Blancos, con deslizantes de  Temperatura (Temp)  y  Matiz (Tint) .
+Aquí puedes corregir dominantes de color debidas a la iluminación: por ejemplo, hacer más
+cálida una foto tomada en sombra (aumentando Temp para añadir tonos amarillos), o eliminar
+un tinte verdoso en luces fluorescentes ajustando Tint hacia magenta. Un método rápido es usar
+el cuentagotas de balance de blancos  y hacer clic en una zona neutra (gris o blanca) de la imagen,
+para que Capture One ajuste automáticamente Temp/Tint de modo que esa área quede neutral.
+Herramienta High Dynamic Range (HDR):  Sirve para recuperar detalle en luces altas y sombras
+profundas. Dispone de cuatro deslizantes: Highlight  (Altas Luces), Shadow  (Sombras), y también
+White  (Blancos) y Black  (Negros) para refinar los extremos . Bajando Highlights  se oscurecen
+las  zonas  sobreexpuestas  para  rescatar  información  (por  ejemplo  cielos  quemados) ,  y
+subiendo  Shadows  se aclaran las sombras para revelar detalle en áreas muy oscuras . Los
+deslizantes de  White  y  Black  permiten ajustar específicamente los puntos más blancos o más
+negros, afinando el contraste sin afectar tanto las zonas intermedias . Ejemplo:  si tu foto tiene
+el cielo muy brillante y sin detalle, reduce Altas Luces  a -50 o -80; verás aparecer las nubes. Si
+además las sombras están muy oscuras (ej. sujeto a contraluz), sube  Sombras  +30/+50 para
+iluminarlo. Ten cuidado de no excederte: levantar sombras en exceso puede introducir ruido ,
+y  bajar  luces  demasiado  podría  dar  un  aspecto  apagado.  Ajusta  hasta  lograr  un  equilibrio
+natural.
+Niveles y Curvas:  Para un control tonal más avanzado, Capture One ofrece la herramienta
+Levels (Niveles)  y Curves (Curvas) . Con Niveles  puedes definir los puntos de negro, gris medio y
+blanco de la imagen moviendo los tiradores en el histograma. Por ejemplo, mover el tirador de
+negros hacia la derecha profundiza los negros (cortando ruido en sombras), y mover el de
+blancos hacia la izquierda intensifica los brillos. La herramienta  Curvas  permite ajustes más
+precisos en forma de gráfica: puedes seleccionar el canal RGB combinado o canales individuales
+R, G, B para correcciones de color por canales. Una  curva en S  suave aumentará el contraste
+(bajando  un  poco  sombras  y  subiendo  luces),  mientras  que  ajustar  solo  la  curva  de  Luma
+(luminosidad) puede cambiar contraste sin afectar la saturación de color . Estas herramientas son
+útiles cuando la herramienta de contraste general no es suficiente; por ejemplo, para dar más
+“pegada” a una foto desvaída, una curva en S es muy efectiva.• 
+26
+• 
+• 
+27
+28
+29
+27
+30
+• 
+4
+Claridad y Estructura:  La Claridad  en Capture One es un ajuste de contraste local  de medianos
+tonos. Añade definición en detalles sin alterar la exposición global. Capture One ofrece varios
+métodos de Claridad : Natural, Punch, Neutral y Classic , que varían en intensidad y en si afectan
+la saturación . Por ejemplo, Natural  es un aumento suave apto para la mayoría de fotos,
+Punch  es más intenso e incrementa ligeramente la saturación (útil para paisajes, pero puede
+hacer aparecer halos en bordes si se abusa), Neutral  da contraste fuerte pero sin saturar colores,
+y  Classic  (legado  de  versiones  antiguas)  es  el  más  ligero  y  preserva  altos  luces .  El
+deslizador de Claridad  en valores positivos aumenta la nitidez percibida en texturas (p.ej. resalta
+nubes, textura de ropa), en valores negativos suaviza la imagen (útil para retratos suavizando
+arrugas) .  Junto  con  Claridad  viene  Estructura ,  que  realza  microdetalles  finos  (textura)
+cuando se incrementa, o los suaviza al reducir . Ejemplo:  en un paisaje urbano, podrías aplicar
+Claridad +20 en método Punch y Estructura +15 para que la arquitectura se vea más definida; en
+cambio, en un retrato femenino quizás uses Claridad -10 (Natural) y Estructura -20 para dar un
+efecto más suave en la piel . Siempre conviene revisar el efecto al 100% de zoom para no
+excederse.
+En combinación, estos ajustes de exposición y tono te permiten llevar tu imagen a un punto neutro o
+creativo según busques. Un flujo típico al revelar un RAW sería:  1) ajustar Balance de Blancos;  2)
+establecer Exposición correcta global; 3) recuperar altas luces/sombras con HDR; 4) afinar el contraste
+con Curvas/Niveles si es necesario; 5) aplicar un toque de Claridad si la imagen lo pide (evita Claridad en
+retratos  a  menos  que  la  uses  en  negativo  para  suavizar).  Recuerda  que  siempre  puedes  activar/
+desactivar  cada  herramienta  para  comparar  el  antes  y  después  y  asegurarte  de  que  tus  cambios
+mejoran la foto.
+Ajustes de Color y Control de Crominancia
+Una de las áreas donde Capture One Pro destaca es en el manejo del color . La pestaña de Color incluye
+varias herramientas para ajustar desde el balance global de color hasta matices muy específicos:
+Editor de Color (Color Editor):  Es una de las herramientas insignia de Capture One. Permite 
+“seleccionar y ajustar un espectro de color estrecho sin afectar a otros colores en la imagen” . El
+Editor de Color tiene tres modos o subherramientas: Básico , Avanzado  y Tono de Piel :
+Básico:  Ofrece rangos de color predefinidos (rojo, naranja, amarillo, verde, cian, azul, púrpura,
+magenta). Seleccionas uno y ajustas su Tono (Hue) , Saturación  y Luminosidad (Lightness)  con
+sliders simples. Útil para ajustes generales rápidos (ej. hacer el cielo más oscuro y saturado
+seleccionando azul y reduciendo Luminosidad mientras subes Saturación).
+Avanzado:  Te deja usar un Selector de Color  (cuentagotas) para elegir cualquier color específico
+en la imagen, incluso rangos muy estrechos. Tras seleccionar , defines el rango exacto en un
+círculo de color y puedes ajustar Hue, Saturación, Luminosidad con mayor precisión y también
+suavizar el rango con el parámetro Smoothness . Puedes crear hasta 30 selecciones de color
+distintas en modo Avanzado, permitiendo una corrección muy detallada . Ejemplo:  en una
+foto de paisaje con un campo verde y cielo azul, podrías con Avanzado seleccionar el tono
+específico del césped y hacerlo más amarillo o oscuro sin tocar el cielo; luego seleccionar el azul
+del cielo por separado y mover su Tono ligeramente hacia cian para un azul más fresco.
+Tono de Piel (Skin Tone):  Es una sección especial del editor diseñada para retratos. Permite
+seleccionar un tono de piel y luego usar controles de Uniformidad  (Uniformity: Hue, Saturation,
+Lightness) para homogenizar ese tono . En otras palabras, puedes igualar variaciones de
+color en la piel (por ejemplo, zonas enrojecidas vs. amarillentas) haciendo que converjan al tono
+de piel deseado, logrando pieles de apariencia más uniforme. También sirve para corregir
+maquillajes disparejos. Ejemplo:  seleccionas con el cuentagotas la frente de la persona, luego• 
+3132
+3133
+34
+35
+3136
+• 
+37
+• 
+• 
+38
+39
+• 
+40
+5
+subes Uniformidad de Tono y Saturación: verás cómo rojeces en mejillas o diferentes tonalidades
+se acercan al tono base seleccionado, dando un look más suave.
+Además, el Editor de Color tiene funciones extra, como  Crear una máscara desde la selección de
+color  (muy útil: seleccionas un color y con un botón generas automáticamente una máscara que podrás
+refinar en una capa, ver sección de capas) y la posibilidad de guardar ajustes de color  como perfil ICC
+o preset para reutilizar . En definitiva, esta herramienta te da un control selectivo: “puede usarse para
+realzar o subdue colores selectivamente, alterar un color por otro, o corregir dominantes de color (ej. corregir
+iluminación artificial)” , todo ello sin afectar el resto de la imagen. 
+Balance de Color (Color Balance):  Otra herramienta poderosa para grading . Consiste en ruedas
+de color  que permiten añadir tintes al Master  (toda la imagen) o separadamente a Sombras,
+Medios Tonos y Altas Luces  (las clásicas tres ruedas del colorista) . Por ejemplo, puedes
+enfriar las sombras añadiendo cian/azul y calentar las luces con amarillo, logrando un efecto
+cinematográfico de  teal and orange . Cada rueda tiene un control para el tono (ángulo en la
+rueda)  y  también  deslizantes  de  Saturación  y  Luminosidad  para  ese  rango  tonal .  Un
+beneficio de esta herramienta es que afecta zonas específicas:  “los ajustes en luces alterarán
+apenas  los  medios  tonos  y  no  tocarán  las  sombras” ,  permitiendo  un  split  toning  muy
+controlado. Capture One incluso permite mostrar las tres ruedas a la vez (vista 3-way) o ruedas
+individuales  grandes,  según  prefieras .  Ejemplo:  para  un  atardecer ,  podrías  dar  un  matiz
+cálido  general  subiendo  un  poco  el  Master  hacia  naranja.  Luego,  en  la  rueda  de  Sombras,
+arrastras  ligeramente  hacia  azul  oscuro  para  equilibrar  las  sombras  frías,  y  en  Altas  Luces
+puedes  añadir  un  toque  de  amarillo  dorado  para  acentuar  el  sol.  Con  los  deslizantes  de
+Luminosidad puedes además aclarar u oscurecer las sombras o luces mientras aplicas el tinte,
+afinando el resultado . Esta herramienta es excelente para color grading  creativo una vez la
+foto ya tiene buena exposición y color básico. Un consejo: asegúrate de tener el balance de
+blancos neutral antes de aplicar un grading, para partir de una base correcta .
+Otras  herramientas  de  color:  La  pestaña  Color  también  incluye  Balance  de  Blancos  (ya
+mencionado), Selector de Perfiles ICC y Curva Base  (que permite elegir perfiles de cámara o
+estilos de color de fabricante, e.g. simulaciones de película Fujifilm si usas una cámara Fuji ),
+así como Dehaze  en versiones recientes. Dehaze  es un control diseñado para eliminar neblina o
+bruma atmosférica aumentando el contraste y la saturación en las zonas lavadas . Tiene un
+slider  de  Cantidad  y  opciones  automáticas;  úsalo  con  moderación  para  cielos  neblinosos  o
+paisajes con bruma: incrementarlo rescata contraste en las zonas veladas por la niebla. Por
+último,  una  mención  a  Perfil  de  Color  de  Salida :  en  la  herramienta  Base  Characteristics
+seleccionas  el  perfil  ICC  específico  de  tu  cámara  (Capture  One  suele  elegir  uno  óptimo
+automáticamente,  como  ProStandard  o  Film  Standard) .  Estos  perfiles  definen  la
+interpretación  de  color  base.  Los  perfiles  ProStandard  en  particular  buscan  colores  más
+auténticos en distintas condiciones de luz . Normalmente no necesitas cambiar esto a menos
+que busques un look específico o uses simulaciones de película incluidas para ciertas cámaras.
+Con estas herramientas, Capture One te da un  dominio del color enorme . Un flujo típico de color
+podría ser: 1) Ajustar balance de blancos (neutralizar dominantes); 2) Usar el Editor de Color (básico/
+avanzado) para corregir colores problemáticos o enfatizar ciertos tonos (ej. hacer el cielo más intenso,
+ajustar el verde de plantas); 3) Aplicar Color Balance para estilizar la imagen global con un look (ej. más
+cálido, más frío, tintes complementarios); 4) Si es retrato, utilizar la pestaña de Tono de Piel para refinar
+la uniformidad de la piel. 
+Ejemplo práctico:  En una foto de retrato al aire libre, el rostro de la modelo tiene un ligero tono rojizo por
+el sol. Podrías ir a  Editor de Color (Skin Tone) , seleccionar el color de su mejilla, y aumentar la41
+42
+• 
+43
+44
+45
+46
+47
+48
+• 
+49
+50
+42
+51
+6
+Uniformidad  para que las diferentes zonas de piel (más rojas, más amarillas) se igualen dando un tono
+homogéneo .  Luego,  en  Avanzado ,  seleccionas  el  color  del  vestido  (supongamos  que  es  azul
+deslavado) y saturas un poco más ese azul sin afectar el fondo. Finalmente, con Color Balance , añades
+un toque cálido global en sombras y luces para darle un ambiente otoñal. El resultado: piel de tono
+consistente, colores del atuendo mejorados, y atmósfera lograda con el grading.
+Detalles, Nitidez y Reducción de Ruido
+La pestaña Detalles  agrupa herramientas para afinar la nitidez de la imagen, reducir el ruido y otros
+detalles de acabado:
+Enfoque (Sharpening):  Por defecto, Capture One aplica un afilado inicial a los RAW según el
+modelo de cámara/lente, pero puedes ajustar la nitidez con la herramienta Sharpening . Esta
+suele tener tres parámetros básicos: Cantidad (Amount) , Radio , Umbral (Threshold) . Cantidad
+controla cuánta nitidez se aplica (valores más altos = más enfoque, pero cuidado con artefactos
+de halo). Radio  determina el tamaño de los detalles a acentuar (un radio pequeño refuerza
+detalles finos, uno grande afecta estructuras más gruesas). Umbral  sirve para evitar amplificar
+el ruido: indica cuánta diferencia de contraste debe haber entre píxeles para que se considere
+borde a enfocar (un umbral más alto significa que áreas lisas con pequeñas variaciones no se
+enfocarían) . La recomendación habitual es visualizar la imagen al 100% de zoom para ajustar
+esto correctamente . Ejemplo:  para un paisaje con muchos detalles (hojas, textura), podrías
+usar Cantidad ~200, Radio 0.8 y Umbral bajo, para lograr una imagen crujiente. En cambio, para
+un retrato, usarías Cantidad moderada (150), Radio pequeño (0.5) y un poco de Umbral para no
+acentuar poros o ruido en la piel. 
+Capture One incluso tiene un Focus Mask  (Máscara de enfoque) que puedes activar para ver resaltadas
+en verde las zonas enfocadas de la foto, útil al cullar imágenes por nitidez. Además, existe la posibilidad
+de aplicar enfoque de salida en el proceso de exportación (por ejemplo, un ligero re-enfoque para
+compensar redimensionados), pero eso se configura en recetas de exportación.
+Reducción de Ruido (Noise Reduction):  Permite eliminar tanto ruido de luminancia (granulado)
+como ruido de crominancia (píxeles de color aberrantes). Tiene al menos dos deslizadores
+principales: Luminance  y Color . Al aumentar Luminance , se suaviza el ruido de brillo,
+esas motas/grano, especialmente visibles en sombras o ISOs altos . Con Color , se reducen los
+puntitos de color verde/magenta típicos de ruido de color . Además, Capture One provee un
+deslizador de Detalles  para recuperar algo de nitidez después de aplicar reducción (porque al
+quitar ruido inevitablemente se pierde algo de detalle) . Un valor de Detalle alto preserva
+texturas pero puede dejar algo de ruido; un valor bajo da una superficie más lisa. La aplicación
+por defecto suele ser moderada (ej. Luminance 50, Color 50 de base) , adecuada para muchos
+casos. Ejemplo:  tienes una foto nocturna a ISO 3200 que se ve granulada. Al subir Luminance  a
+70, el cielo se vuelve más limpio pero quizás la foto luce un poco blanda, entonces aumentas 
+Detalle  a 60 para recuperar algo de microcontraste . Con Color  a 80 eliminas casi por
+completo puntos cromáticos verdes/morados en sombras. Siempre comprueba al 100% y
+equilibra: es mejor tolerar un poco  de ruido que destruir todos los detalles. 
+Tip: La reducción de ruido de Capture One solo funciona en archivos RAW (no en JPEGs) , y hay un
+control especial llamado Single Pixel  para eliminar hot pixels  (píxeles calientes de larga exposición) .52
+• 
+53
+54
+• 
+5556
+57
+56
+58
+59
+58
+60
+61
+7
+Ese deslizador detecta píxeles anómalos blancos aislados y los corrige  – útil en astrofotografía o
+exposiciones de varios minutos donde aparecen puntitos blancos.
+Reducción de Moiré:  Si tus fotos muestran  muaré  (ese patrón de colores arcoíris en tramas
+finas, como telas con textura), la pestaña Detalles también tiene una herramienta de  Moiré .
+Permite mitigarlo aplicando un filtro cromático en las áreas afectadas. En Capture One, se suele
+usar en combinación con máscaras locales: es decir , pintas una máscara sobre la zona con moiré
+(por ejemplo la camisa del sujeto) y luego en esa capa ajustas el deslizador de Moiré hasta que el
+patrón desaparezca. No todas las fotos tendrán moiré, pero es bueno saber que hay solución
+integrada.
+Máscara de Enfoque (Focus)  y Comprobación de nitidez:  Capture One cuenta con una función
+llamada  Focus  Peaking  o  Focus  Mask  que  resalta  las  zonas  enfocadas  en  verde,  como
+mencionamos, para evaluar qué partes de la imagen están nítidas. Puedes activarla con el ícono
+de máscara de enfoque en la barra de herramientas. También está la herramienta Loupe  (Lupa),
+que con solo pasar el cursor te muestra un recuadro ampliado al 100% de la zona bajo el ratón –
+muy útil para comprobar detalles rápidamente sin hacer zoom global.
+En resumen, la pestaña de Detalles es donde refinamos la calidad técnica de la imagen. Un flujo de
+ejemplo tras ajustar exposición y color sería: 1) Ver la foto al 100% en la zona más importante (ojos en
+un retrato, por ejemplo);  2) Ajustar  Sharpening  aumentando un poco Cantidad hasta ver suficiente
+nitidez pero sin artefactos; 3) Ajustar Noise Reduction  según el ISO – en ISO bajos quizás bajar incluso
+Luminance por debajo de 50 para conservar cada detalle, en ISO altos subirlo hasta que el ruido no
+distraiga; 4) Si hay muaré o hot pixels, aplicar las herramientas correspondientes; 5) Usar capas locales
+si necesito aplicar reducción de ruido solo en sombras (se puede hacer: por ejemplo crear una máscara
+solo en las sombras y aplicar NR fuerte ahí, mientras mantienes detalles en las luces).
+Ejemplo práctico:  Tienes una foto de fauna tomada con teleobjetivo, ligeramente trepidada. Primero
+intentas recuperar algo de nitidez: subes Cantidad de enfoque y bajas un poco Umbral para forzar a
+que incluso detalles suaves se enfoquen – pero notas algo de ruido en el fondo porque era ISO 1600.
+Entonces subes Reducción de Luminancia a 40, y Color a ~50 para limpiar el bokeh del fondo. La
+combinación deja al sujeto más definido y el ruido menos visible. Para asegurarte, usas la Máscara de
+Enfoque  y ves que efectivamente el contorno del animal está bien resaltado (en foco) y el fondo no,
+como debe ser . Ahora la imagen está lista en términos de nitidez/ruido.
+Correcciones Ópticas y Composición (Recorte y Perspectiva)
+En la pestaña Lente/Óptica  y la de Composición  encontramos funciones para corregir defectos ópticos
+de la toma y mejorar el encuadre:
+Corrección de Lente:  Capture One reconoce muchos objetivos fotográficos a través de su base
+de  datos.  Automáticamente  aplicará  el  perfil  de  lente  para  corregir  distorsión  geométrica
+(enderezar curvas),  viñeteo  (aclarar esquinas oscuras) y  caída de nitidez en bordes , según
+corresponda .  Si  tu  lente  no  es  reconocido,  puedes  elegir  un  perfil  genérico  o  ajustar
+manualmente  estos  parámetros.  Además,  la  herramienta  incluye  Aberración  Cromática  y
+Fringe (Franjas púrpura) : puedes habilitar la  Corrección de Aberración Cromática  automática,
+que analizará la imagen y eliminará los bordes de color (verde/magenta) causados por la lente
+. También hay un control para Purple Fringing  que reduce esas líneas púrpura intensas que a
+veces aparecen en transiciones de alto contraste (como ramas contra el cielo) . Lo bueno es
+que casi todo esto se hace con un clic: en la mayoría de casos, al importar la foto verás que ya62
+• 
+• 
+• 
+63
+64
+65
+8
+está  aplicado  el  perfil  de  lente  corregido.  Puedes  desactivarlo  si,  por  ejemplo,  prefieres
+conservar  la  viñeta  original  por  motivos  estéticos.  Asimismo,  hay  una  opción  de  viñeteo
+creativo : un deslizador para añadir viñeta oscura o clara a propósito, útil para dirigir la mirada
+en la composición .
+Herramienta  de  Recorte  (Crop)  y  Rotación:  La  pestaña  Composición  (o  la  barra  de
+herramientas) te brinda la herramienta Recortar . Puedes elegir proporciones fijas (1:1, 3:2, 16:9,
+etc.) o  recorte libre , y luego arrastrar las esquinas del marco sobre la imagen para definir el
+nuevo encuadre . Capture One te permite incluso "recortar fuera del área de la imagen" , es
+decir , rotar o mover el marco más allá de los bordes originales si deseas incluir un borde negro/
+blanco, aunque normalmente recortamos dentro de la foto. Mientras recortas, puedes mostrar
+una cuadrícula o regla de tercios para guiarte . La rotación y enderezamiento se puede hacer
+con la herramienta Enderezar  (Straighten) dibujando una línea recta sobre algo que debería ser
+horizontal o vertical en la foto, o ajustando el ángulo manualmente. Un tip: si necesitas girar 90º
+exactos, hay botones dedicados (o atajos  <>). El recorte se puede ajustar en cualquier
+momento,  no  es  permanente  hasta  exportar .  Ejemplo:  si  tienes  un  horizonte  caído,  usas  la
+herramienta  Enderezar  dibujando  a  lo  largo  del  horizonte;  la  imagen  gira  y  recorta
+automáticamente para enderezarse. Luego seleccionas una relación 4:5 si quieres imprimir en
+cierto tamaño y ajustas el marco para mejorar la composición. 
+Corrección de Perspectiva (Keystone):  Para fotos de arquitectura o interiores, la herramienta
+Keystone  corrige  la  perspectiva  convergente  (cuando  las  líneas  verticales  u  horizontales
+aparecen inclinadas por la posición de la cámara). En Capture One 22+ esta herramienta es muy
+potente, incluyendo un modo automático con AI . Tienes tres modos: Vertical , Horizontal  o
+Ambos  (Full) .  En  modo  automático,  Capture  One  detectará  líneas  en  la  imagen  y  buscará
+enderezarlas . En modo manual (Guiado), dibujas cuatro guías sobre líneas que deberían ser
+rectas/paralelas  (por  ejemplo,  esquinas  de  un  edificio)  y  luego  aplicas  la  corrección .
+También puedes usar los deslizantes de Vertical, Horizontal, Skew (oblicuo) y Aspect  para ajustar la
+perspectiva manualmente . El deslizador  Amount  permite controlar la intensidad de la
+corrección – a veces una corrección del 100% se ve artificial, así que puedes reducir la cantidad al
+80% para dejar algo de convergencia natural . Ejemplo:  sacaste una foto de un edificio hacia
+arriba y las líneas se juntan arriba (efecto trapezoidal). Seleccionas Keystone Vertical, dibujas dos
+líneas guías paralelas a los bordes del edificio y pulsas aplicar: la imagen se estira y corrige para
+que esas líneas queden verticales . Quizá el edificio ahora parece ensanchado; ajustas
+Aspect  para compensar y Amount  a 80% para un resultado más realista. La foto queda con líneas
+rectas y proporcionada. (Ten en cuenta que la corrección de perspectiva recorta parte de la
+imagen, así que encuadra con holgura al disparar si planeas corregir luego).
+Otros ajustes de composición:  Además del recorte y keystone, en esta pestaña encuentras
+herramientas  como  Overlay  (para  superponer  una  imagen  de  referencia,  útil  en  diseño),
+Anotaciones  (para dibujar notas a mano alzada sobre la foto, por ejemplo para comunicar
+retoques a un retocador), y  Herramienta de Texto  si trabajas en Capture One Studio (para
+disparos tipo catálogo donde se etiqueta código de barras, etc.). Para muchos usuarios, estas no
+serán esenciales, pero están disponibles.
+Con las correcciones ópticas y de composición, terminamos de pulir la imagen desde el punto de vista
+técnico y estético de encuadre. Tras estos pasos, la fotografía suele estar lista en cuanto a edición.
+Ahora  es  buen  momento  para  considerar  los  ajustes  locales  si  se  requieren  retoques  por  zonas
+específicas.63
+• 
+66 66
+67
+• 
+6869
+69
+6770
+7172
+73
+6770
+• 
+9
+Ajustes Locales con Capas y Máscaras
+Una  de  las  capacidades  más  potentes  de  Capture  One  Pro  es  la  edición  local  mediante  capas  y
+máscaras , lo que permite aplicar ajustes solo a partes específicas de la imagen. Esto funciona de forma
+análoga a Photoshop: puedes crear hasta 16 capas de ajuste por foto , cada una con su máscara
+para definir dónde se aplican los cambios.
+¿Por qué usar capas?  Porque a veces quieres tratar diferentes zonas de la foto de forma distinta. Por
+ejemplo, “sharpen únicamente los ojos en un retrato, o aplicar un degradado en el cielo”  en un paisaje .
+Con  capas,  no  tienes  que  exportar  a  Photoshop  para  hacer  ajustes  selectivos;  puedes  hacerlo
+directamente en el RAW.
+Creación de Capas y Máscaras:  Para crear una nueva capa vacía, puedes hacer clic en el botón
+“+”  en  la  herramienta  Capas.  Luego  seleccionas  una  herramienta  de  máscara:  las  opciones
+incluyen  Pincel (Draw Mask)  para pintar a mano alzada,  Borrador  para quitar partes de la
+máscara, Máscara Degradada Lineal , Máscara Degradada Radial , Máscara de Retoque (Heal)
+y  Máscara de Clonado (Clone) , e incluso herramientas AI como  Magic Brush  (pincel mágico
+que detecta y rellena áreas similares en color) y Magic Eraser . Al dibujar una máscara,
+verás un área roja semitransparente indicando la zona afectada (esto se puede mostrar/ocultar
+con la tecla  M). Todas las máscaras son  no destructivas y editables  – puedes mover una
+máscara degradada, cambiar su tamaño o rotación; en máscaras de pincel puedes ajustar la
+dureza, opacidad o incluso usar Refinar Máscara  para suavizar bordes, o Invertir Máscara .
+Pincel de máscara:  Es el más versátil. Permite pintar cualquier forma. Puedes ajustar el tamaño,
+dureza y flujo. Útil para zonas complejas que las gradientes no cubren.
+Máscara Degradada Lineal:  Crea un gradiente lineal, ideal para cielos o suelos, donde el efecto
+debe ir disminuyendo gradualmente. Ejemplo: oscurecer el cielo de forma progresiva hacia el
+horizonte.
+Máscara Degradada Radial:  Crea un efecto circular u ovalado, con transición suave desde el
+centro. Muy útil para viñeteados personalizados o para realzar un rostro (máscara radial inversa
+para aclarar solo el centro).
+Máscara de Retoque (Heal):  Permite clonar contenido cercano para eliminar imperfecciones.
+Funciona como el pincel de corregir: pintas sobre una mancha o elemento a quitar , y Capture
+One busca automáticamente una fuente adecuada (que luego puedes reposicionar). Útil para
+eliminar granos, polvo del sensor , personas u objetos pequeños no deseados.
+Máscara de Clonado (Clone):  Similar a Heal pero copia exactamente de la fuente seleccionada sin
+mezclar texturas. Se usa para duplicar o cubrir algo con más control, aunque suele requerir que
+la fuente tenga textura similar .
+Magic Brush:  Herramienta introducida recientemente, selecciona automáticamente áreas con
+colores/tonos similares contiguos mientras pintas, acelerando la creación de máscaras
+complejas (ejemplo: seleccionar todo el cielo detrás de un árbol con pocos trazos).
+Magic Eraser:  Borra partes de una máscara de forma inteligente, útil para limpiar rebordes o
+áreas internas que quedaron enmascaradas accidentalmente.
+Aplicación  de  ajustes  en  capas:  Una  vez  creada  la  máscara,  cualquier  ajuste  que  realices
+(exposición, color , nitidez, etc.) afectará  solo a esa capa . De hecho,  “puedes hacer cualquier
+combinación de ajustes de diferentes herramientas en la misma capa” . Nada impide que en una
+capa ajustes a la vez  la exposición, el balance de color y la claridad, por ejemplo, para esa región
+enmascarada .  Incluso  los  mismos  ajustes  disponibles  globalmente  se  pueden  usar74
+75
+• 
+7677
+7879
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+80
+80
+10
+localmente  (excepto algunos como Moiré que están solo en capas). En la herramienta Capas
+puedes  ver  una  lista  de  tus  capas,  renombrarlas  (es  recomendable  nombrarlas
+descriptivamente, ej. "Cielo más oscuro"), ajustar la opacidad de cada capa (para moderar el
+efecto) o activarlas/desactivarlas para comparar . 
+Ejemplo  1:  En  un  paisaje ,  podrías  querer  mejorar  el  cielo  sin  tocar  la  tierra.  Creas  una  Máscara
+Degradada Lineal  desde la parte superior cubriendo todo el cielo. Luego en esa capa bajas la Exposición
+-0.5, aumentas Claridad +20 para acentuar las nubes, y quizá añades un poco de azul bajando la
+Temperatura. El cielo gana drama, mientras el suelo queda intacto. Si el efecto es muy fuerte, bajas la
+opacidad de la capa  al 70%. Ejemplo 2:  En un retrato , quieres aclarar ligeramente la cara y darle calidez.
+Tomas el Pincel , pintas sobre el rostro de la persona. En esa capa subes Exposición +0.3, subes Shadows
++10 para sacar detalle de ojos, y aumentas la Temperatura para calentar la piel. La cara ahora destaca
+más. Luego creas otra capa nueva para  fondo , seleccionas con  Magic Brush  el fondo alrededor de la
+persona y bajas Saturación para no distraer . Estás haciendo un dodge & burn  básico y aislamiento de
+sujeto sin salir de Capture One.
+Capas de Retoque (Heal/Clone):  Para eliminar defectos, crea una capa de tipo Heal . Pinta sobre
+el  elemento  a  quitar  (digamos  un  sensor  dust  spot  en  el  cielo).  Capture  One  escogerá
+automáticamente una fuente (indicada con una cruz) y reemplazará la zona. Puedes mover esa
+cruz fuente si no encaja bien. La diferencia entre Heal y Clone es que Heal intenta fundir la
+textura inteligentemente, mientras Clone copia tal cual. Para manchas y pequeños objetos, Heal
+suele ser mejor porque respeta la iluminación circundante. Ejemplo:  quitas un cable eléctrico del
+cielo  pintando  sobre  él  con  Heal;  el  cable  desaparece,  el  cielo  queda  uniforme.  Es  posible
+necesitar  varias  capas  de  Heal  para  distintos  propósitos,  ya  que  cada  capa  Heal  soporta
+múltiples pinceladas pero todas usando una única fuente actualmente (en versiones recientes,
+varias fuentes por capa son posibles con Heal avanzado).
+Limitaciones y consejos:  Capture One permite hasta 16 capas, suficiente para la mayoría de
+usos . Si necesitas más, probablemente deberías ir a Photoshop, pero eso rara vez ocurre en
+ajustes de luz/color . Recuerda que las capas en Capture One son  capas de ajuste , no capas de
+píxel como en Photoshop; no puedes hacer montajes con dos fotos, por ejemplo, solo aplicar
+ajustes a una misma imagen. Otro tip: Puedes copiar máscaras entre capas o de una foto a otra
+(menú copiar/pegar máscara), e incluso aplicar  estilos  a capas (ver sección de Estilos) o usar
+Luma  Range  –  una  función  avanzada  que  permite  restringir  una  máscara  a  un  rango  de
+luminancia (ej. aplicar ajuste solo a sombras o solo a reflejos dentro de la máscara) .
+Con las capas, tienes un control fino local. Es común usar 2-5 capas en una edición avanzada: por
+ejemplo,  una  para  cielo,  una  para  sujeto  principal,  otra  para  viñeta,  otra  para  retoques  de  quitar
+objetos. Todo integrado en el flujo RAW. 
+Ejemplo práctico final de capas:  Piensa en una foto de arquitectura con un edificio y cielo. Decides: capa 1
+–  Cielo : máscara degradada, bajas exposición e intensidad para recuperar nubes. Capa 2 –  Edificio :
+pincel  sobre  fachada,  subes  claridad  y  contraste  para  resaltar  detalles  arquitectónicos.  Capa  3  –
+Ventanas :  quieres  atenuar  unos  reflejos,  pintas  sobre  ellas  y  bajas  highlights.  Capa  4  –  Eliminar
+personas : usas Heal para quitar un par de peatones en escena. Tras esto, la foto luce espectacular:
+cada elemento tratado por separado pero dentro de una misma herramienta. 
+(Nota: La herramienta Capas de Capture One recibió mejoras con IA en las últimas versiones – por ejemplo,
+Auto Mascaras  o deteción de sujetos – revisa las novedades de tu versión, ya que constantemente añaden
+funciones que facilitan la creación de máscaras automáticamente.)81
+• 
+• 
+74
+82
+11
+Estilos y Presets: Automatizando Ajustes Repetitivos
+A medida que vas editando múltiples fotos, puedes aprovechar Styles (Estilos)  y Presets (Preajustes)
+para agilizar tu flujo de trabajo. Ambos permiten guardar un conjunto de ajustes  y aplicarlos a otras
+imágenes con un clic, pero hay diferencias sutiles:
+Presets (Ajustes Preestablecidos):  Son configuraciones guardadas de una sola herramienta .
+Por ejemplo, podrías guardar un preset de la herramienta Balance de Blancos llamado "WB
+Soleado 5500K", o un preset de Curvas específico que creaste. Cada herramienta en Capture One
+te permite guardar sus ajustes actuales como preset (menú contextual de la herramienta >
+Guardar Preajuste). Luego puedes aplicarlo desde la misma herramienta o desde el menú de
+ajustes. Un preset afecta solo esa herramienta.
+Styles (Estilos):  Son  conjuntos de ajustes de múltiples herramientas a la vez . Básicamente,
+capturan el estado de varias herramientas (o todas) y te permiten aplicarlo de una sola vez a otra
+foto. Por ejemplo, podrías crear un Estilo llamado "Blanco y Negro Suave" que incluya: convertir
+a B&N, subir contraste, añadir grano, y viñeta ligera. Al aplicar ese estilo, se aplicarán todos esos
+cambios a la imagen de destino. Capture One viene con  Estilos Integrados (Built-in Styles)  de
+fábrica, que abarcan efectos populares (varios looks de color , clásicos, etc.) . Estos pueden ser
+punto de partida para tu edit o un acabado final. Los estilos, igual que los presets, no alteran el
+archivo original , solo son instrucciones de ajuste que se pueden activar/desactivar .
+Un estilo puede contener ajustes de muchas herramientas, incluso de capas si así lo guardas (desde la
+versión 16 es posible incluir capas con sus máscaras en los estilos) . También puedes combinar
+(apilar) estilos y presets: por ejemplo aplicar un estilo de color y luego un preset de nitidez encima .
+Capture One permite  "stacking"  de estilos, lo que significa que puedes aplicar más de un estilo sin
+eliminar  el  anterior ,  siempre  que  no  afecten  a  la  misma  herramienta  o  que  especifiques  que  se
+combinen .
+Usos típicos:  Los estilos y presets son geniales para garantizar consistencia en series de fotos y
+ahorrar tiempo. Por ejemplo, en una sesión de estudio con iluminación controlada, puedes
+editar una foto de referencia (ajustar exposición, color , etc.), luego guardar esos ajustes como
+Estilo  "RetratoEstudioBase". Luego aplicas ese estilo a todas las demás fotos del set para que
+queden con la misma base de revelado. Después solo afinas detalles individuales. Capture One
+incluso permite aplicar estilos automáticamente  al importar  imágenes . Así, si tienes un
+estilo  de  revelado  favorito,  podrías  configurarlo  en  el  diálogo  de  importación  (apartado  de
+ajustes), y cada foto nueva importada ya tendrá esos ajustes aplicados de entrada.
+Diferencia entre Estilo y Preset: “Los estilos son ajustes combinados de múltiples herramientas,
+mientras los presets son de una sola herramienta” . Por ejemplo, podrías tener un  Preset  de
+Claridad = 20 (solo eso), pero un Estilo  puede englobar Claridad 20 + Saturación -10 + Curva en S
++  Viñeta.  Ten  en  cuenta  que  al  aplicar  un  estilo,  si  este  no  incluye  alguna  herramienta  en
+particular , dejará intacto lo que ya tengas en esa herramienta en la foto. Y viceversa, si incluye
+una herramienta, sobreescribirá su estado actual en la foto.
+Creación y gestión:  Para guardar un estilo, ajusta una foto (puedes incluso añadir varias capas
+si  quieres  incluirlas),  luego  ve  al  menú  Ajustes > Estilos > Guardar Estilo de  
+Usuario... .  Te  permitirá  elegir  qué  ajustes  incluir  (quizá  no  quieras  incluir  recorte  o
+exposición porque son muy específicos de cada foto, por ejemplo). Guardas el estilo con nombre
+deseado. Ahora aparecerá bajo Estilos de Usuario . Puedes organizarlos en carpetas. Capture One• 
+• 83
+84
+85
+86
+87
+87
+• 
+88
+• 
+84
+• 
+12
+también vende paquetes de  Estilos Profesionales  que son colecciones predefinidas para ciertos
+looks (cine, vintage, etc.). Asimismo, hay comunidad donde fotógrafos comparten estilos.
+Aplicar a capas:  Una característica avanzada es aplicar un estilo a una capa nueva . Esto es útil
+si quieres que un estilo afecte solo parcialmente la foto y luego ajustar su opacidad. Por ejemplo,
+un  estilo  de  "toque  cálido  y  contraste"  lo  podrías  aplicar  en  una  capa  con  opacidad  50%,
+suavizando su efecto. Para hacerlo, en la herramienta Capas hay un menú desplegable para
+aplicar Estilos/Presets a la capa seleccionada . 
+En  resumen,  los  Estilos/Presets  son  tus  "recetas"  de  edición  reutilizables.  Ayudan  a  mantener
+consistencia  (muy importante en trabajos profesionales, e.g. todas las fotos de un editorial con la
+misma paleta de color) y ahorrar tiempo  en tareas repetitivas. Piensa en ellos como puntos de partida:
+aplicas un estilo y luego puedes refinar la foto individualmente. Y no te preocupes, si un estilo no te
+gusta, puedes deshacer o apagar los ajustes introducidos.
+Ejemplo práctico:  Eres fotógrafo de bodas y has desarrollado un look propio: tonos cálidos, un poco
+desaturados, con sombras levantadas. Creas un estilo con esos ajustes. Al importar las 500 fotos de la
+boda, aplicas ese estilo a todas en lote (seleccionas todas las miniaturas, clic derecho > aplicar estilo).
+Instantáneamente, todas toman el look base. Luego vas serie por serie ajustando alguna exposición o
+haciendo correcciones locales, pero la colorimetría base es uniforme. Esto te ha evitado tener que
+repetir los mismos pasos en cada foto. Finalmente, si ves que quizás el efecto fue muy fuerte en
+algunas, podrías bajarle la opacidad si lo aplicaste vía capa, o simplemente ajustar herramienta por
+herramienta. 
+Otro ejemplo: Tienes un preset para Blanco y Negro  (que pone Saturación -100, añade Contraste, etc.).
+Lo aplicas a algunas fotos urbanas para previsualizar rápidamente cómo se verían en monocromo, en
+lugar de mover cada slider manualmente foto por foto. Si te gusta, ya lo dejas y sigues puliendo. Si no,
+lo quitas. Es una forma de probar looks  con rapidez.
+Disparo Tethered (Conectado) y Captura Remota
+Para fotógrafos de estudio o aquellos que deseen disparar con la cámara conectada al ordenador ,
+Capture One Pro ofrece una de las mejores experiencias de  Tethering  del mercado.  Tethered capture
+significa  que  tu  cámara  (mediante  USB,  Thunderbolt  o  WiFi  en  algunos  casos)  envía  las  fotos
+directamente a Capture One en tu computadora en el momento de tomarlas.
+Configuración:  Conecta tu cámara compatible mediante el cable. En Capture One, abre la pestaña
+Capturar (Capture) . Allí verás los controles de la cámara. Una vez que Capture One la reconozca,
+podrás ajustar muchos parámetros desde el software: “puedes ajustar remotamente la exposición, modo
+de medición, compensación de exposición, ISO, balance de blancos y disparar el obturador”  – todo desde
+la computadora, sin tocar la cámara. También es posible activar el  Live View : Capture One abre una
+ventana con la vista en vivo del sensor , útil para componer y enfocar en fotografía de producto o
+retrato en estudio. Incluso puedes controlar el  enfoque remoto  (si la cámara lo soporta) desde la
+ventana de Live View, moviendo el foco incrementalmente para clavar la nitidez .
+Captura en Catálogo vs Sesión:  Puedes tetherar tanto en sesiones como catálogos. En sesiones es
+común porque la carpeta  Captures  se va llenando con las tomas y es fácil gestionar selects. En un
+catálogo, las fotos van a una colección por fecha o al catálogo activo. La pestaña Captura te permite
+elegir la  carpeta de destino  (en sesiones, normalmente Captures, pero podrías crear subcarpetas si
+haces distintos sets) e incluso nombrar los archivos entrantes con un patrón (por ejemplo, producto001,• 
+89
+90
+91
+92
+13
+producto002 , etc.) usando la herramienta Nombrado de Secuencia . Esto es muy apreciado en flujos
+comerciales donde cada foto lleva un código.
+Aplicación  de  ajustes  en  captura:  Una  característica  poderosa:  puedes  aplicar  estilos  o  ajustes
+automáticos durante la captura . Por ejemplo, puedes preestablecer que cada foto tethered tenga
+cierto estilo o preset de revelado (como un balance de blancos fijo, un perfil de color , etc.), de modo que
+según  llega  la  imagen  ya  se  ve  "casi  lista"  para  presentar  al  cliente  en  pantalla.  También  puedes
+ingresar  metadatos  automáticamente  (p.  ej.,  palabras  clave  del  proyecto,  copyright)  a  cada  foto
+entrante .
+Ventajas del tethering:  Inmediata revisión en pantalla grande – la imagen aparece en el Visor de tu
+laptop o monitor calibrado en segundos, pudiendo evaluar foco, exposición, pose, etc. en detalle.
+Además, Capture One permite compartir esta experiencia con otros: - Mediante la app Capture Pilot  en
+iPad/iPhone: “te permite presentar, calificar y capturar archivos de imagen en un dispositivo iOS” , es decir ,
+un cliente o asistente puede ver las fotos en un iPad en tiempo real, incluso calificarlas o hacer zoom
+. Solo se necesita estar en la misma red WiFi. - Mediante un servidor web  integrado: Capture
+One puede habilitar en Capture Pilot una función web para que cualquier dispositivo con navegador
+(una  tablet  Android,  un  ordenador  remoto)  acceda  a  las  imágenes  para  visualizarlas  o  puntuarlas
+mientras disparas . Esto es genial para trabajo colaborativo en estudio. - Con Capture One Live
+(una funcionalidad más reciente, posiblemente suscripción aparte), puedes subir en tiempo real las
+imágenes  a  la  nube  para  que  un  cliente  remoto  las  vea  según  se  van  tomando,  e  incluso  haga
+comentarios.
+Workflow en tethering:  Por ejemplo, en una sesión de moda en estudio: conectas la cámara, abres
+una nueva  Sesión Capture One  llamada "CatálogoMujer_enero25". En la pestaña Captura, ajustas el
+nombre de archivo como Mujer001_ . Haces unas pruebas, ves en Live View la modelo, ajustas enfoque
+exacto en sus ojos usando el control remoto de foco. Disparas. Al instante la foto aparece en Capture
+One; tú la etiquetas con 5★ si te gusta. El cliente sentado ve en un monitor (o iPad via Capture Pilot) la
+foto en alta calidad, y comenta. Notas que la luz está un poco alta, así que desde Capture One bajas la
+velocidad de obturación de la cámara remotamente de 1/125 a 1/160. Disparas de nuevo, la exposición
+ahora está perfecta. Todo sin moverte del ordenador . Incluso podrías configurar que cada foto nueva se
+marque automáticamente  si cumple cierta condición, o usar la herramienta de Overlay  para encuadrar
+conforme a un boceto predefinido superpuesto. En definitiva, tethering con Capture One es fluido y
+robusto, por eso es estándar en muchos estudios profesionales.
+Compatibilidad:  La mayoría de cámaras Canon, Nikon, Sony, Fuji, Phase One, etc., son soportadas para
+tethering,  pero  conviene  verificar  en  la  lista  de  cámaras  soportadas.  Algunas  cámaras  permiten
+tethering inalámbrico (Sony recientes, Canon vía wifi); en Capture One 22 se implementó tethering
+inalámbrico para algunos modelos Sony. Si tu cámara no es soportada para tethering nativo, una
+solución es disparar con captura a carpeta: muchas cámaras pueden enviar fotos a una carpeta vía
+software del fabricante, y luego Capture One vigila esa carpeta (función Hot Folder ). Es menos elegante
+pero igualmente viable.
+En conclusión, si haces fotografía de estudio, producto, moda o cualquier situación donde ver la foto
+inmediatamente  en  pantalla  sea  importante,  aprovecha  la  pestaña  Captura  de  Capture  One .  Te
+agilizará la sesión y con las herramientas integradas podrás mantener un flujo ordenado (nombres,
+ajustes auto, selección inmediata de mejores tomas). Este nivel de integración de cámara y software es
+una de las razones por las que muchos profesionales eligen Capture One.93
+94
+95
+9697
+9697
+14
+Exportación y Salida de Imágenes
+Una vez terminada la edición, llega el momento de exportar  las imágenes finales para su uso: ya sea
+subir a web, imprimir , entregar a un cliente, etc. Capture One gestiona esto mediante el módulo de
+Exportación  y particularmente las Recetas de Procesado (Export Recipes) .
+Para exportar , puedes seleccionar la(s) imagen(es) y hacer clic en el botón Exportar  (icono de flecha) o ir
+a  Archivo > Exportar > Exportar… . Se abrirá la ventana de  Exportador , que reúne todas las
+opciones necesarias . Veamos los componentes clave:
+Recetas de Exportación:  En el Exportador , a la izquierda, verás una lista de Recetas. Una Receta
+define un formato de salida, calidad, tamaño, carpeta de destino, renombrado, etc. Puedes tener
+múltiples recetas y activarlas simultáneamente para exportar en varios formatos en un solo paso
+. Por ejemplo, una receta para JPEG web 1920px y otra para TIFF alta resolución; al
+exportar con ambas activas, se generarán ambas versiones. Capture One incluye recetas
+predefinidas (JPEG sRGB, TIFF 16bit AdobeRGB, PNG, etc.) y puedes crear las tuyas. Cada receta
+tiene estas configuraciones principales:
+Formato y Tamaño:  elige JPEG, TIFF, PSD, PNG, DNG o incluso exportar Original  (el RAW sin
+modificaciones). Ajusta la calidad (para JPEG), profundidad de bits (8/16 para TIFF/PSD), perfil de
+color de salida (sRGB, AdobeRGB, etc.), y escalado: puedes exportar a dimensiones específicas
+(px, pulgadas con DPI) o a porcentaje del original . Si no quieres redimensionar , déjalo en
+Escala 100%.
+Ubicación (Location):  decide la carpeta donde se guardarán los archivos exportados . Puede
+ser una ruta fija o relativa (ej. subcarpeta dentro de la carpeta de sesión/catalogo). También
+puedes optar por “Preguntar al exportar” si prefieres decidir en el momento.
+Nombre de archivo (Naming):  define cómo se nombrarán los archivos exportados . Puedes
+usar tokens  (como [Nombre del archivo original], [Contador], [Colección], [Fecha], etc.) para
+formatear nombres automáticamente. Ejemplo: Evento_{fecha}_{nombre original}  produciría 
+Evento_2025-08-16_IMG1234.JPG  por decir .
+Ajustes (Adjustments):  aquí sobre todo se decide si incluir ajustes como capas overlay,
+anotaciones, si incrustar o no la simulación de grano, y crucialmente enfoque de salida : hay
+opciones de aplicar enfoque adicional optimizado para Web, Impresión en Pantalla Retina,
+Impresión en papel Mate/Brillante , etc., para compensar la difracción o pérdida de nitidez al
+escalar . Tú eliges la cantidad (normalmente ' estándar' va bien).
+Metadatos:  puedes elegir qué metadatos incluir en los archivos exportados (EXIF de cámara,
+datos de copyright, calificaciones/etiquetas, keywords). Por ejemplo, puede que quieras excluir
+los metadatos de ubicación GPS al subir a internet. Aquí tildas/destildas según quieras .
+Marca de Agua (Watermark):  si necesitas, puedes añadir una marca de agua durante la
+exportación. Puede ser texto (con opciones de fuente, tamaño, opacidad) o una imagen PNG con
+tu logo . La herramienta Watermark te deja posicionarla y escalarla. Esto es útil para galerías
+de prueba o redes sociales.
+Cola de Exportación:  Al exportar muchas imágenes, se mostrarán en una cola con progreso.
+Puedes seguir editando mientras exporta en segundo plano; un icono de flecha naranja indica
+que esa foto está en proceso .
+Proceso de Exportación:  Una vez configuras una o varias recetas (marcas las casillas de las que
+quieras usar), simplemente pulsas Exportar x fotos . Capture One generará los archivos según
+las  recetas  seleccionadas.  Si  seleccionaste  varias  recetas,  creará  todas  las  versiones
+especificadas. Por ejemplo, de 10 fotos seleccionadas y 2 recetas activas, obtendrás 20 archivos
+de salida (cada foto en dos formatos). La interfaz te permite ver una vista previa de proofing  de98
+• 
+99100
+• 
+101
+• 101
+• 101
+• 
+101
+• 
+102
+• 
+103
+• 
+104
+• 
+15
+cómo quedará cada receta en la foto antes de exportar  – esto es genial, pues muestra
+por ejemplo el efecto de conversión de color , la nitidez de salida, o la presencia de la marca de
+agua tal cual aparecería .
+Exportar Originales vs Variantes:  En el menú Exportar tienes también la opción de  Exportar
+Originales . Esto simplemente copia los RAW originales a otro lugar , útil para entregar negativos o
+respaldar , sin procesar . Si quieres exportar tus ediciones debes usar la opción principal (que en
+versiones recientes se llama solo "Exportar", unificando lo que antes era "Procesar"). Variantes  se
+refiere a las versiones editadas – cada foto con sus ajustes es una variante. Generalmente
+Exportar cubre esto automáticamente.  Nota:  Si usas  Capture One Express  (gratuito de algunas
+marcas) notarás diferencias: la versión Pro ofrece el sistema completo de recetas, en Express
+puede estar limitado a exportación simple.
+Recetas simultáneas y gestión:  Puedes crear recetas para todos tus usos frecuentes: e.g. "TIFF
+16-bit ProPhoto para impresión", "JPEG sRGB 1920px para web", "Full size JPEG AdobeRGB".
+Luego al exportar , marcas las que necesites según el caso. Esto ahorra reconfigurar cada vez.
+Incluso  podrías  exportar  todas  a  la  vez  para  generar  un  lote  de  distintos  tamaños.  La
+Exportación  en  Capture  One  21+  unificó  mucho  este  proceso  para  simplificar  sin  perder
+flexibilidad . También introdujo una  cola de procesamiento  con historial: puedes ver qué
+exportaciones hiciste recientemente (y re-exportar alguna si quieres). 
+Ejemplo final:  Terminaste de editar 50 fotos de un book para un cliente. Necesitas entregarle versiones
+en alta resolución y también subir algunas a Instagram. Configuras dos recetas: 1. JPEG Alta Res : JPEG,
+calidad 90, tamaño Lado más largo = 4000px (o no escalar si quieres full), perfil AdobeRGB, renombre
+como "Cliente_Nombre_001". 2.  JPEG Insta : JPEG, calidad 80, tamaño 1080px lado largo, perfil sRGB
+(importante para web), añadir marca de agua con tu logo en esquina, renombrar "Insta_Nombre_001".
+Marcas  ambas  y  das  a  Exportar .  Capture  One  creará  en  la  carpeta  que  indicaste  dos  subcarpetas
+(puedes hacer que cada receta vaya a subcarpeta propia, ej. "HighRes" y "Web", usando tokens en la
+ubicación). En unos minutos, tendrás 50 archivos grandes y 50 optimizados para Instagram, todos de
+un tirón. Mientras exporta, puedes ir revisando otro proyecto ya que el proceso no te inmoviliza la
+aplicación.
+Tras la exportación, ya cuentas con tus imágenes finales listas. Recuerda revisar alguna para asegurarte
+de que el color y nitidez son correctos (la prueba de soft-proofing integrada reduce sorpresas, pero
+siempre es bueno verificar).
+Conclusiones y Próximos Pasos
+Hemos cubierto las funciones fundamentales de Capture One Pro a modo de manual extenso: desde la
+organización con catálogos/sesiones, la importación de fotos, ajustes globales de exposición y color ,
+detalle y correcciones ópticas, hasta las potentes capas de ajustes locales, estilos para agilizar flujos y la
+exportación con recetas. También exploramos cómo usar Capture One en entornos profesionales como
+el tethering en estudio, donde brilla por su estabilidad y control. 
+Capture One Pro es una herramienta muy completa; al principio puede parecer abrumadora por la
+cantidad  de  pestañas  y  opciones,  pero  con  esta  guía  paso  a  paso  tendrás  un  mapa  claro.  Te
+recomendamos  practicar  por  bloques  como  hemos  presentado:  primero  dominar  la  interfaz  y
+organización, luego los ajustes básicos globales (exposición, color), seguir con máscaras y capas para
+refinar detalles localmente, y finalmente preparar la salida. No dudes en aprovechar las facilidades
+como atajos de teclado, personalización de interfaz (por ejemplo, puedes crear tu propio espacio de105 106
+106
+• 
+• 
+98
+16
+trabajo con solo las herramientas que más uses), y la comunidad de Capture One donde encontrarás
+estilos gratuitos, webinars y foros de ayuda.
+Ejercicios sugeridos:  - Revela una foto RAW desde cero ajustando exposición y color; luego aplica un
+estilo integrado para ver diferencias. - Prueba crear una máscara de capa para aclarar solo a tu sujeto
+en una foto a contraluz. - Si tienes cámara compatible, intenta una pequeña sesión tethered en casa
+para familiarizarte con la pestaña Captura. - Exporta una foto en varios formatos con recetas (JPEG
+sRGB vs TIFF) para ver cómo se manejan los perfiles de color y tamaños.
+Con práctica, descubrirás que Capture One Pro puede mejorar tanto la calidad de tus imágenes como la
+eficiencia  de  tu  flujo  de  trabajo.  Ya  sea  que  vengas  de  Lightroom  u  otro  software,  apreciarás  su
+rendimiento y la calidad del resultado, especialmente en color y nitidez. Esperamos que esta guía te
+haya servido como un completo manual de usuario. ¡Ahora es tu turno de aplicar todas estas funciones
+a tus fotografías y llevar tu revelado al siguiente nivel con Capture One Pro! 
+¡Buen revelado y buena luz!
+Complete Guide to Using Catalogs – Home
+https://support.captureone.com/hc/en-us/articles/360003108698-Complete-Guide-to-Using-Catalogs
+Guía de Inicio Rápido Capture One | PDF |
+Archivo de computadora | Cámara digital réflex de lente única
+https://es.scribd.com/document/413833065/Guia-de-Inicio-Rapido-Capture-One
+User interface overview – Home
+https://support.captureone.com/hc/en-us/articles/360002468797-User-interface-overview
+The Complete Guide to Sessions in Capture One – Home
+https://support.captureone.com/hc/en-us/articles/360003115137-The-Complete-Guide-to-Sessions-in-Capture-One
+The High Dynamic Range tool overview – Home
+https://support.captureone.com/hc/en-us/articles/360002610558-The-High-Dynamic-Range-tool-overview
+Adjusting local contrast in the Clarity tool – Home
+https://support.captureone.com/hc/en-us/articles/360002613998-Adjusting-local-contrast-in-the-Clarity-tool
+The Color Editor overview – Home
+https://support.captureone.com/hc/en-us/articles/360002601358-The-Color-Editor-overview
+The Color Balance tool overview – Home
+https://support.captureone.com/hc/en-us/articles/360002594857-The-Color-Balance-tool-overview
+Dehaze – Home
+https://support.captureone.com/hc/en-us/articles/8808329040541-Dehaze
+The Noise Reduction tool – Home
+https://support.captureone.com/hc/en-us/articles/360002615758-The-Noise-Reduction-tool
+User guide – Home
+https://support.captureone.com/hc/en-us/categories/360000279017-User-guide
+Keystone correction – Home
+https://support.captureone.com/hc/en-us/articles/360002588058-Keystone-correction
+Overview of Layers and Masks – Home
+https://support.captureone.com/hc/en-us/articles/360002601658-Overview-of-Layers-and-Masks113 14 15 16 17 22
+2 3 4 5 810 12 20 21 23 24 26 37 53 54 63 66
+6 7 911
+18 19 25
+27 28 29 30
+31 32 33 34 35 36
+38 39 40 41 42 49 51 52
+43 44 45 46 47 48
+50
+55 56 57 58 59 60 61 62
+64 65 93
+67 68 69 70 71 72 73
+74 75 76 77 78 79 80 81 82
+17
+An overview of Styles – Home
+https://support.captureone.com/hc/en-us/articles/360002611797-An-overview-of-Styles
+Tethered capture overview – Home
+https://support.captureone.com/hc/en-us/articles/360002549137-Tethered-capture-overview
+Export overview – Home
+https://support.captureone.com/hc/en-us/articles/4403021653649-Export-overview83 84 85 86 87 88 89
+90 91 92 94 95 96 97
+98 99100 101 102 103 104 105 106
+18
