@@ -1,103 +1,69 @@
-// functions/gemini-processor.js
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-const fs = require("fs");
-const path = require("path");
+// api/gemini-processor.js
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+export default async function handler(req, res) {
+  // Solo acepta POST
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Método no permitido' });
+  }
 
-const SYSTEM_INSTRUCTION = `
-**ROL Y OBJETIVO:**
-Eres "Promptraits", un agente de IA experto en ingeniería de prompts para modelos de generación de imágenes fotorrealistas. Tu única función es convertir la petición de un usuario en un prompt técnico, detallado y profesional. Tu respuesta final debe ser SIEMPRE y ÚNICAMENTE en INGLÉS.
+  try {
+    const { prompt, referenceImage, mimeType } = req.body;
 
-**PRINCIPIOS FUNDAMENTALES (NO NEGOCIABLES):**
-
-1.  **ANÁLISIS DE IMAGEN DE REFERENCIA (PRIORIDAD MÁXIMA):** Si se proporciona una imagen [REFERENCE IMAGE], tu tarea principal es actuar como un director de fotografía experto. Debes ignorar casi por completo el texto del usuario y centrarte en deconstruir la imagen de referencia. Describe en el prompt, de manera técnica y profesional, TODOS los siguientes elementos: entorno, sujeto(s), pose, estilo fotográfico, esquema de luces (luz principal, relleno, contraluz, difusores, temperatura), parámetros de cámara (lente, apertura, ISO), composición y post-procesado (grano, etalonaje). Tu objetivo es que el prompt resultante replique la imagen de referencia con exactitud.
-
-2.  **INTERPRETACIÓN DE IDEA EN TEXTO:** Si el usuario NO proporciona una imagen, debes enriquecer su idea en texto aplicando los mismos principios de un fotógrafo profesional. Define un entorno, una iluminación, una composición y todos los detalles técnicos necesarios.
-
-3.  **PRESERVACIÓN DE IDENTIDAD FACIAL:** Siempre debes incluir en el prompt una directiva clara para que el modelo de imagen preserve el rostro de un selfie del usuario con un 100% de fidelidad. Usa la frase: "using the exact face from the provided selfie — no editing, no retouching, no smoothing".
-
-**REGLAS DE SALIDA (OBLIGATORIAS):**
-
-1.  **FORMATO OBLIGATORIO:** Tu salida DEBE seguir la estructura definida en el archivo de conocimiento "FORMATO OBLIGATORIO DEL PROMPT.txt". Este archivo es tu única fuente de verdad para la estructura del prompt.
-2.  **IDIOMA DE SALIDA:** Tu respuesta final (el prompt generado) debe ser exclusivamente en INGLÉS.
-3.  **SIN TEXTO ADICIONAL:** No incluyas saludos, explicaciones, ni ningún texto antes o después del prompt. Tu única salida es el prompt en sí.
-`;
-
-function loadKnowledgeBase() {
-    const KNOWLEDGE_PATH = path.resolve(process.cwd(), 'knowledge');
-    let knowledgeContent = "\n## KNOWLEDGE BASE START\n\n";
-    try {
-        const files = fs.readdirSync(KNOWLEDGE_PATH);
-        files.forEach(file => {
-            const filePath = path.join(KNOWLEDGE_PATH, file);
-            if (fs.lstatSync(filePath).isFile()) {
-                const fileContent = fs.readFileSync(filePath, 'utf8');
-                knowledgeContent += `--- Contenido de: ${file} ---\n${fileContent}\n\n`;
-            }
-        });
-        knowledgeContent += "## KNOWLEDGE BASE END\n";
-        return knowledgeContent;
-    } catch (e) {
-        console.error("Error al cargar la base de conocimiento:", e.message);
-        return `\n## KNOWLEDGE BASE START - ERROR\n\nNo se pudo cargar la base de conocimiento: ${e.message}\n\n## KNOWLEDGE BASE END\n`;
+    // Validación básica
+    if (!prompt && !referenceImage) {
+      return res.status(400).json({ error: 'Debes proporcionar un prompt o una imagen' });
     }
+
+    // Inicializa Gemini con tu API key desde variables de entorno
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+    let result;
+
+    if (referenceImage) {
+      // Si hay imagen, procesa con visión
+      const imageParts = [
+        {
+          inlineData: {
+            data: referenceImage,
+            mimeType: mimeType || "image/jpeg"
+          }
+        }
+      ];
+
+      const promptText = prompt || "Analiza esta imagen y genera un prompt detallado para recrear un retrato similar con IA, incluyendo iluminación, composición, estilo fotográfico y ajustes técnicos.";
+      
+      result = await model.generateContent([promptText, ...imageParts]);
+    } else {
+      // Solo texto
+      const fullPrompt = `Eres un experto en fotografía profesional y prompts para IA. 
+      
+El usuario quiere: ${prompt}
+
+Genera un prompt técnico y detallado para crear un retrato profesional que incluya:
+- Descripción de la escena y sujeto
+- Iluminación específica (tipo, ángulo, temperatura de color)
+- Configuración de cámara (focal, apertura, ISO, velocidad)
+- Composición y encuadre
+- Estilo de post-procesamiento
+- Keywords técnicos
+
+El prompt debe ser preciso, profesional y listo para usar en herramientas como Midjourney, DALL-E o Stable Diffusion.`;
+
+      result = await model.generateContent(fullPrompt);
+    }
+
+    const response = await result.response;
+    const text = response.text();
+
+    return res.status(200).send(text);
+
+  } catch (error) {
+    console.error('Error en Gemini:', error);
+    return res.status(500).json({ 
+      error: 'Error al procesar la solicitud',
+      details: error.message 
+    });
+  }
 }
-
-const KNOWLEDGE_BASE_TEXT = loadKnowledgeBase();
-
-exports.handler = async (event) => {
-    if (event.httpMethod === 'OPTIONS') {
-        return {
-            statusCode: 200,
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Headers": "Content-Type",
-                "Access-Control-Allow-Methods": "POST, OPTIONS"
-            }
-        };
-    }
-    
-    if (event.httpMethod !== 'POST') {
-        return { statusCode: 405, body: 'Method Not Allowed' };
-    }
-
-    try {
-        const { prompt, referenceImage, mimeType } = JSON.parse(event.body);
-
-        if (!prompt && !referenceImage) {
-            return { statusCode: 400, body: 'Se requiere un texto o una imagen.' };
-        }
-
-        const model = ai.getGenerativeModel({ model: "gemini-1.5-flash-latest", systemInstruction: SYSTEM_INSTRUCTION });
-
-        const promptParts = [KNOWLEDGE_BASE_TEXT];
-        
-        if (prompt) {
-            promptParts.push(`\n\nPetición del usuario: "${prompt}"`);
-        }
-        
-        if (referenceImage && mimeType) {
-            promptParts.push({ inlineData: { mimeType: mimeType, data: referenceImage } });
-            promptParts.push({ text: "\n[REFERENCE IMAGE ATTACHED]" });
-        }
-
-        const result = await model.generateContent({ contents: [{ role: "user", parts: promptParts }] });
-        const response = await result.response;
-        const text = response.text();
-
-        return {
-            statusCode: 200,
-            headers: { "Content-Type": "text/plain; charset=utf-8", "Access-Control-Allow-Origin": "*" },
-            body: text,
-        };
-    } catch (error) {
-        console.error("Error en la función de Gemini:", error);
-        return {
-            statusCode: 500,
-            headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
-            body: JSON.stringify({ error: 'Fallo interno del servidor al procesar la IA. Detalle: ' + error.message }),
-        };
-    }
-};
-
