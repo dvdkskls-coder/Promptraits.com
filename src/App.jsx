@@ -80,7 +80,12 @@ const ALL_PROMPTS = RAW_PROMPTS.map(p => ({
 }));
 
 const CATEGORIES = [
-    { id: 'todos', name: 'Todos' }, { id: 'hombre', name: 'Hombre' }, { id: 'mujer', name: 'Mujer' }, { id: 'mascotas', name: 'Mascotas' }, { id: 'halloween', name: 'Halloween' }, { id: 'pareja', name: 'Parejas' }
+    { id: 'todos', name: 'Todos' }, 
+    { id: 'hombre', name: 'Hombre' }, 
+    { id: 'mujer', name: 'Mujer' }, 
+    { id: 'mascotas', name: 'Mascotas' }, 
+    { id: 'halloween', name: 'Halloween' }, 
+    { id: 'pareja', name: 'Parejas' }
 ];
 
 const PRESETS = [
@@ -94,13 +99,11 @@ const PRESETS = [
 
 const SUBSCRIPTION_PLANS = [
     { name: "FREE", price: "0", period: "por registrarte", popular: false, icon: <Gift className="w-6 h-6" />, features: ["4 créditos de bienvenida", "Newsletter con consejos y trucos", "4 prompts exclusivos al mes"] },
-    { name: "PRO", price: "10", period: "/mes", popular: true, icon: <Zap className="w-6 h-6" />, features: ["30 créditos", "3 prompts personalizados (entrega 24/48h)", "Revisiones incluidas", "Newsletter con consejos y trucos", "8 prompts exclusivos al mes"] },
+    { name: "PRO", price: "10", period: "/mes", popular: true, icon: <Crown className="w-6 h-6" />, features: ["30 créditos", "3 prompts personalizados (entrega 24/48h)", "Revisiones incluidas", "Newsletter con consejos y trucos", "8 prompts exclusivos al mes"] },
     { name: "PREMIUM", price: "25", period: "/mes", popular: false, icon: <Crown className="w-6 h-6" />, features: ["Acceso al agente personalizado", "Asesoría 1 a 1", "5 prompts personalizados", "100 créditos para generar prompts"] }
 ];
 
-
 // --- COMPONENTES ---
-
 const AnimatedSection = ({ children, className }) => <div className={className}>{children}</div>;
 
 const CategoryTabs = ({ selected, onSelect }) => (
@@ -198,7 +201,7 @@ const GeminiAssistantView = ({ onCopy }) => {
                             <div>
                                 <label className="block text-sm font-medium text-gray-300 mb-2">Imagen de Referencia:</label>
                                 <label htmlFor="referenceImage" className="w-full bg-black/50 border border-white/10 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-black/70">
-                                    <ImageIcon className="w-8 h-8 text-gray-400" />
+                                    <Camera className="w-8 h-8 text-gray-400" />
                                     <span className="mt-2 text-sm text-gray-300">Sube una imagen</span>
                                 </label>
                                 <input id="referenceImage" type="file" className="hidden" onChange={handleImageChange} accept="image/*" />
@@ -258,23 +261,16 @@ export default function App() {
         return categories.map(cat => ALL_PROMPTS.find(p => p.category === cat)).filter(Boolean);
     }, []);
 
-    const navigateToPage = (page, hash) => {
+    const navigateToPage = (page) => {
         setView(page);
-        setMobileMenuOpen(false); // Cierra el menú móvil al navegar
-        if (hash) {
-            setTimeout(() => {
-                const element = document.querySelector(hash);
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        } else {
-            window.scrollTo(0, 0);
-        }
+        setMobileMenuOpen(false);
+        window.scrollTo(0, 0);
     };
     
     return (
         <div className="min-h-screen bg-[#0D0D0D] text-gray-200 font-sans">
             <nav className="fixed top-0 w-full z-50 bg-[#0D0D0D]/80 backdrop-blur-lg border-b border-white/10">
-                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
                         <button onClick={() => navigateToPage('home')} className="flex items-center space-x-3">
                             <Camera className="w-8 h-8 text-cyan-400" />
@@ -292,7 +288,7 @@ export default function App() {
                         </button>
                     </div>
                 </div>
-                 {mobileMenuOpen && (
+                {mobileMenuOpen && (
                     <div className="md:hidden bg-[#111111] border-t border-white/10">
                         <div className="px-4 py-4 space-y-4">
                             <button onClick={() => navigateToPage('gallery')} className="block w-full text-left text-gray-300 hover:text-white">Galería</button>
@@ -312,7 +308,7 @@ export default function App() {
             {view === 'home' && (
                 <main>
                     <section className="relative pt-40 pb-24 px-4 overflow-hidden text-center">
-                       <AnimatedSection className="max-w-5xl mx-auto relative z-10">
+                        <AnimatedSection className="max-w-5xl mx-auto relative z-10">
                             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tighter">
                                 Convierte tus Selfies en
                                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mt-2">
@@ -333,11 +329,11 @@ export default function App() {
 
                     <section id="home-gallery" className="py-12 px-4">
                         <div className="max-w-7xl mx-auto">
-                             <AnimatedSection className="text-center mb-16">
+                            <AnimatedSection className="text-center mb-16">
                                 <h2 className="text-4xl md:text-5xl font-bold mb-4">Muestra de la Galería <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">GRATIS</span></h2>
                                 <p className="text-gray-400 text-lg max-w-3xl mx-auto">Una selección por categoría. Pulsa en "Galería" para ver todos los prompts.</p>
                             </AnimatedSection>
-                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                                 {homePrompts.map(item => (
                                     <div key={item.id} onClick={() => handleCopy(item.prompt)} className="cursor-pointer group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 transform hover:-translate-y-2 transition-transform duration-300 aspect-[3/4]">
                                         <img src={item.src} alt={item.title} loading="lazy" className="w-full h-full object-cover" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/300x400.png?text=Imagen+no+encontrada"; }} />
@@ -345,75 +341,6 @@ export default function App() {
                                             <Copy className="w-12 h-12 text-white/80" />
                                         </div>
                                     </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="presets" className="py-24 px-4">
-                       <div className="max-w-7xl mx-auto">
-                         <AnimatedSection className="text-center mb-16">
-                             <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tighter">
-                                 Presets <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Profesionales</span>
-                             </h2>
-                             <p className="text-gray-400 text-lg max-w-2xl mx-auto">Bloques de código listos para copiar y pegar en tus prompts. Resultados garantizados.</p>
-                         </AnimatedSection>
-                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                             {PRESETS.map((preset) => (
-                                 <AnimatedSection key={preset.id} className="relative rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:border-purple-500/50">
-                                     {!preset.free && (
-                                         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center z-10 p-4 text-center">
-                                             <Lock className="w-10 h-10 text-purple-400 mx-auto mb-4" />
-                                             <p className="text-white font-bold text-lg mb-2">Plan PRO Requerido</p>
-                                             <a href="#planes" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
-                                                 Ver planes →
-                                             </a>
-                                         </div>
-                                     )}
-                                     <div className="flex items-start justify-between mb-4">
-                                         <div>
-                                             <h3 className="text-xl font-bold mb-1">{preset.name}</h3>
-                                             <p className="text-sm text-gray-400">{preset.subtitle}</p>
-                                         </div>
-                                         {preset.free && <div className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-bold tracking-wider">GRATIS</div>}
-                                     </div>
-                                     <p className="text-sm text-gray-500 mb-4 h-12">
-                                         {preset.promptBlock.substring(0, 80)}...
-                                     </p>
-                                     <button onClick={() => handleCopy(preset.promptBlock)} className="w-full flex items-center justify-center space-x-2 bg-white/10 text-white px-4 py-3 rounded-lg font-bold hover:bg-white/20 transition-colors duration-300">
-                                        <Copy size={18} />
-                                        <span>Copiar Preset</span>
-                                     </button>
-                                 </AnimatedSection>
-                             ))}
-                         </div>
-                     </div>
-                    </section>
-
-                    <section id="planes" className="py-24 px-4 bg-black/20">
-                        <div className="max-w-7xl mx-auto">
-                            <AnimatedSection className="text-center mb-16">
-                                <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tighter">
-                                    Planes de <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Suscripción</span>
-                                </h2>
-                                <p className="text-gray-400 text-lg">Elige el plan que mejor se adapte a tus necesidades de generación de prompts y retratos.</p>
-                            </AnimatedSection>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                {SUBSCRIPTION_PLANS.map((plan, idx) => (
-                                    <AnimatedSection key={idx} className={`relative rounded-2xl p-8 border transition-all duration-300 ${plan.popular ? 'bg-white/5 border-green-500 shadow-2xl shadow-green-500/20' : 'bg-white/5 border-white/10'}`}>
-                                        {plan.popular && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-400 to-cyan-500 text-black px-4 py-1 rounded-full text-sm font-bold">Recomendado</div>}
-                                        <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                                        <div className="mb-6">
-                                            <span className="text-5xl font-bold tracking-tighter">{plan.price}€</span>
-                                            <span className="text-gray-400 text-sm ml-2">{plan.period}</span>
-                                        </div>
-                                        <ul className="space-y-3 mb-8">
-                                            {plan.features.map((feature, i) => <li key={i} className="flex items-start space-x-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" /><span className="text-gray-300">{feature}</span></li>)}
-                                        </ul>
-                                        <button className={`w-full py-3 rounded-full font-bold transition-all duration-300 ${plan.popular ? 'bg-gradient-to-r from-green-400 to-cyan-500 text-black hover:shadow-lg hover:shadow-cyan-500/20' : 'bg-white/10 text-white hover:bg-white/20'}`}>
-                                            Suscribirse
-                                        </button>
-                                    </AnimatedSection>
                                 ))}
                             </div>
                         </div>
@@ -426,7 +353,7 @@ export default function App() {
                     {view === 'gallery' && (
                         <section id="full-gallery" className="py-12">
                             <div className="max-w-7xl mx-auto">
-                                 <AnimatedSection className="text-center mb-16">
+                                <AnimatedSection className="text-center mb-16">
                                     <h2 className="text-4xl md:text-5xl font-bold mb-4">Galería de <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Prompts Públicos</span></h2>
                                     <p className="text-gray-400 text-lg">Navega, inspírate y haz clic en una imagen para copiar el prompt.</p>
                                 </AnimatedSection>
@@ -451,7 +378,7 @@ export default function App() {
             )}
             
             <footer className="bg-black/20 border-t border-white/10 py-12 px-4 mt-20">
-                 <div className="max-w-7xl mx-auto text-center">
+                <div className="max-w-7xl mx-auto text-center">
                     <div className="flex items-center justify-center space-x-3 mb-6">
                         <Camera className="w-7 h-7 text-cyan-400" />
                         <span className="text-lg font-bold tracking-wider">PROMPTRAITS</span>
@@ -463,8 +390,8 @@ export default function App() {
                         <a href="https://www.instagram.com/sr_waly/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition"><Instagram /></a>
                         <a href="https://t.me/+nyMJxze9il4wZGJk" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition"><Send /></a>
                     </div>
-                     <p className="text-gray-600 text-sm">© {new Date().getFullYear()} Promptraits by Sr. Waly. Todos los derechos reservados.</p>
-                 </div>
+                    <p className="text-gray-600 text-sm">© {new Date().getFullYear()} Promptraits by Sr. Waly. Todos los derechos reservados.</p>
+                </div>
             </footer>
         </div>
     );
