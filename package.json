@@ -1,9 +1,9 @@
 {
-  "name": "promptraits-web",
+  "name": "Promptraits.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@google/genai": "^0.14.0",
+    "@google/generative-ai": "^0.21.0",
     "lucide-react": "0.395.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
