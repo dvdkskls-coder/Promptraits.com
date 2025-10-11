@@ -345,6 +345,74 @@ export default function App() {
                             </div>
                         </div>
                     </section>
+                                      <section id="presets" className="py-24 px-4">
+                       <div className="max-w-7xl mx-auto">
+                         <AnimatedSection className="text-center mb-16">
+                             <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tighter">
+                                 Presets <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Profesionales</span>
+                             </h2>
+                             <p className="text-gray-400 text-lg max-w-2xl mx-auto">Bloques de código listos para copiar y pegar en tus prompts. Resultados garantizados.</p>
+                         </AnimatedSection>
+                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                             {PRESETS.map((preset) => (
+                                 <AnimatedSection key={preset.id} className="relative rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:border-purple-500/50">
+                                     {!preset.free && (
+                                         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center z-10 p-4 text-center">
+                                             <Lock className="w-10 h-10 text-purple-400 mx-auto mb-4" />
+                                             <p className="text-white font-bold text-lg mb-2">Plan PRO Requerido</p>
+                                             <a href="#planes" className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                                                 Ver planes →
+                                             </a>
+                                         </div>
+                                     )}
+                                     <div className="flex items-start justify-between mb-4">
+                                         <div>
+                                             <h3 className="text-xl font-bold mb-1">{preset.name}</h3>
+                                             <p className="text-sm text-gray-400">{preset.subtitle}</p>
+                                         </div>
+                                         {preset.free && <div className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-bold tracking-wider">GRATIS</div>}
+                                     </div>
+                                     <p className="text-sm text-gray-500 mb-4 h-12">
+                                         {preset.promptBlock.substring(0, 80)}...
+                                     </p>
+                                     <button onClick={() => handleCopy(preset.promptBlock)} className="w-full flex items-center justify-center space-x-2 bg-white/10 text-white px-4 py-3 rounded-lg font-bold hover:bg-white/20 transition-colors duration-300">
+                                        <Copy size={18} />
+                                        <span>Copiar Preset</span>
+                                     </button>
+                                 </AnimatedSection>
+                             ))}
+                         </div>
+                     </div>
+                    </section>
+
+                    <section id="planes" className="py-24 px-4 bg-black/20">
+                        <div className="max-w-7xl mx-auto">
+                            <AnimatedSection className="text-center mb-16">
+                                <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tighter">
+                                    Planes de <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Suscripción</span>
+                                </h2>
+                                <p className="text-gray-400 text-lg">Elige el plan que mejor se adapte a tus necesidades de generación de prompts y retratos.</p>
+                            </AnimatedSection>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                {SUBSCRIPTION_PLANS.map((plan, idx) => (
+                                    <AnimatedSection key={idx} className={`relative rounded-2xl p-8 border transition-all duration-300 ${plan.popular ? 'bg-white/5 border-green-500 shadow-2xl shadow-green-500/20' : 'bg-white/5 border-white/10'}`}>
+                                        {plan.popular && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-400 to-cyan-500 text-black px-4 py-1 rounded-full text-sm font-bold">Recomendado</div>}
+                                        <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                                        <div className="mb-6">
+                                            <span className="text-5xl font-bold tracking-tighter">{plan.price}€</span>
+                                            <span className="text-gray-400 text-sm ml-2">{plan.period}</span>
+                                        </div>
+                                        <ul className="space-y-3 mb-8">
+                                            {plan.features.map((feature, i) => <li key={i} className="flex items-start space-x-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" /><span className="text-gray-300">{feature}</span></li>)}
+                                        </ul>
+                                        <button className={`w-full py-3 rounded-full font-bold transition-all duration-300 ${plan.popular ? 'bg-gradient-to-r from-green-400 to-cyan-500 text-black hover:shadow-lg hover:shadow-cyan-500/20' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+                                            Suscribirse
+                                        </button>
+                                    </AnimatedSection>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
                 </main>
             )}
 
