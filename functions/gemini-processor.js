@@ -1,3 +1,4 @@
+// functions/gemini-processor.js
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const fs = require("fs");
 const path = require("path");
@@ -46,7 +47,6 @@ function loadKnowledgeBase() {
 const KNOWLEDGE_BASE_TEXT = loadKnowledgeBase();
 
 exports.handler = async (event) => {
-    // Permitimos OPTIONS para pre-flight requests (CORS) y POST para la ejecución
     if (event.httpMethod === 'OPTIONS') {
         return {
             statusCode: 200,
