@@ -150,7 +150,7 @@ const GeminiAssistantView = ({ onCopy }) => {
             imageBase64 = await fileToBase64(referenceImage);
         }
 
-        const functionURL = '/.netlify/functions/gemini-processor';
+        const functionURL = '/api/gemini-processor';
 
         try {
             const res = await fetch(functionURL, {
