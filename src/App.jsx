@@ -277,7 +277,7 @@ export default function App() {
                             <span className="text-xl font-bold tracking-wider">PROMPTRAITS</span>
                         </button>
                         <div className="hidden md:flex items-center space-x-8">
-                            <button onClick={() => navigateToPage('gallery')} className="text-gray-300 hover:text-white transition duration-300">Galería</button>
+                            <a href="#full-gallery" className="text-gray-300 hover:text-white transition duration-300">Galería</a>
                             <button onClick={() => navigateToPage('assistant')} className="text-gray-300 hover:text-white transition duration-300">Generador IA</button>
                         </div>
                         <div className="hidden md:flex items-center">
@@ -291,7 +291,7 @@ export default function App() {
                 {mobileMenuOpen && (
                     <div className="md:hidden bg-[#111111] border-t border-white/10">
                         <div className="px-4 py-4 space-y-4">
-                            <button onClick={() => navigateToPage('gallery')} className="block w-full text-left text-gray-300 hover:text-white">Galería</button>
+                            <a href="#full-gallery" onClick={() => setMobileMenuOpen(false)} className="block w-full text-left text-gray-300 hover:text-white">Galería</a>
                             <button onClick={() => navigateToPage('assistant')} className="block w-full text-left text-gray-300 hover:text-white">Generador IA</button>
                             <a href="#login" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-white">Login</a>
                         </div>
