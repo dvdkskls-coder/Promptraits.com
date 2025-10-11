@@ -98,6 +98,7 @@ const SUBSCRIPTION_PLANS = [
     { name: "PREMIUM", price: "25", period: "/mes", popular: false, icon: <Crown className="w-6 h-6" />, features: ["Acceso al agente personalizado", "Asesoría 1 a 1", "5 prompts personalizados", "100 créditos para generar prompts"] }
 ];
 
+
 // --- COMPONENTES ---
 
 const AnimatedSection = ({ children, className }) => <div className={className}>{children}</div>;
@@ -174,7 +175,7 @@ const GeminiAssistantView = ({ onCopy }) => {
             setIsLoading(false);
         }
     };
-    
+
     return (
         <section id="prompt-generator" className="py-24 px-4 bg-black/20">
             <div className="max-w-4xl mx-auto">
@@ -184,24 +185,26 @@ const GeminiAssistantView = ({ onCopy }) => {
                 </AnimatedSection>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        <div>
-                            <label htmlFor="inputText" className="block text-sm font-medium text-gray-300 mb-2">Describe tu idea (opcional si subes una imagen):</label>
-                            <textarea id="inputText" rows="8"
-                                className="w-full bg-black/50 border border-white/10 rounded-lg p-3 text-gray-300 focus:ring-2 focus:ring-cyan-500"
-                                placeholder="Ej: un retrato de un astronauta en un campo de flores, estilo cinematográfico..."
-                                value={prompt}
-                                onChange={(e) => setPrompt(e.target.value)}
-                            ></textarea>
-                        </div>
-                        <div>
-                            <label htmlFor="referenceImage" className="block text-sm font-medium text-gray-300 mb-2">Imagen de Referencia:</label>
-                            <label htmlFor="referenceImage" className="w-full bg-black/50 border border-white/10 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-black/70">
-                                <ImageIcon className="w-8 h-8 text-gray-400" />
-                                <span className="mt-2 text-sm text-gray-300">Sube una imagen de referencia</span>
-                            </label>
-                            <input id="referenceImage" type="file" className="hidden" onChange={handleImageChange} accept="image/*" />
-                            <p className="text-xs text-gray-500 mt-2">Sube una imagen de referencia para recrear una escena similar.</p>
-                            {imagePreview && <img src={imagePreview} alt="Vista previa" className="mt-4 rounded-lg w-full max-w-xs mx-auto"/>}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div className="md:col-span-2">
+                                <label htmlFor="inputText" className="block text-sm font-medium text-gray-300 mb-2">Describe tu idea (opcional si subes una imagen):</label>
+                                <textarea id="inputText" rows="8"
+                                    className="w-full h-full bg-black/50 border border-white/10 rounded-lg p-3 text-gray-300 focus:ring-2 focus:ring-cyan-500"
+                                    placeholder="Ej: un retrato de un astronauta en un campo de flores, estilo cinematográfico..."
+                                    value={prompt}
+                                    onChange={(e) => setPrompt(e.target.value)}
+                                ></textarea>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-300 mb-2">Imagen de Referencia:</label>
+                                <label htmlFor="referenceImage" className="w-full bg-black/50 border border-white/10 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-black/70">
+                                    <ImageIcon className="w-8 h-8 text-gray-400" />
+                                    <span className="mt-2 text-sm text-gray-300">Sube una imagen</span>
+                                </label>
+                                <input id="referenceImage" type="file" className="hidden" onChange={handleImageChange} accept="image/*" />
+                                <p className="text-xs text-gray-500 mt-2">Sube una imagen de referencia para recrear una escena similar.</p>
+                                {imagePreview && <img src={imagePreview} alt="Vista previa" className="mt-4 rounded-lg w-full" />}
+                            </div>
                         </div>
                         <button type="submit" disabled={isLoading || (!prompt && !referenceImage)} className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-bold disabled:opacity-50 disabled:cursor-not-allowed">
                             {isLoading ? "Generando..." : "Generar Prompt"}
@@ -227,11 +230,11 @@ const GeminiAssistantView = ({ onCopy }) => {
     );
 };
 
-
 export default function App() {
     const [view, setView] = useState('home');
     const [galleryFilter, setGalleryFilter] = useState('todos');
     const [toastText, setToastText] = useState("");
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const showToast = (text) => {
         setToastText(text);
@@ -255,11 +258,19 @@ export default function App() {
         return categories.map(cat => ALL_PROMPTS.find(p => p.category === cat)).filter(Boolean);
     }, []);
 
-    const navigateToPage = (page) => {
+    const navigateToPage = (page, hash) => {
         setView(page);
-        window.scrollTo(0, 0);
+        setMobileMenuOpen(false); // Cierra el menú móvil al navegar
+        if (hash) {
+            setTimeout(() => {
+                const element = document.querySelector(hash);
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        } else {
+            window.scrollTo(0, 0);
+        }
     };
-
+    
     return (
         <div className="min-h-screen bg-[#0D0D0D] text-gray-200 font-sans">
             <nav className="fixed top-0 w-full z-50 bg-[#0D0D0D]/80 backdrop-blur-lg border-b border-white/10">
@@ -276,10 +287,20 @@ export default function App() {
                         <div className="hidden md:flex items-center">
                             <a href="#login" className="bg-white/10 text-white px-6 py-2 rounded-full font-semibold hover:bg-white/20 transition duration-300">Login</a>
                         </div>
-                        {/* Mobile menu button */}
+                        <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                            {mobileMenuOpen ? <X /> : <Menu />}
+                        </button>
                     </div>
                 </div>
-                 {/* Mobile menu content */}
+                 {mobileMenuOpen && (
+                    <div className="md:hidden bg-[#111111] border-t border-white/10">
+                        <div className="px-4 py-4 space-y-4">
+                            <button onClick={() => navigateToPage('gallery')} className="block w-full text-left text-gray-300 hover:text-white">Galería</button>
+                            <button onClick={() => navigateToPage('assistant')} className="block w-full text-left text-gray-300 hover:text-white">Generador IA</button>
+                            <a href="#login" onClick={() => setMobileMenuOpen(false)} className="block text-gray-300 hover:text-white">Login</a>
+                        </div>
+                    </div>
+                )}
             </nav>
 
             {toastText && (
@@ -446,7 +467,5 @@ export default function App() {
                  </div>
             </footer>
         </div>
-    );
-}
     );
 }
